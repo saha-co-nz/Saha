@@ -1,27 +1,20 @@
 import Link from "next/link";
 
-const serviceRows = [
+/* Three capabilities inside one discipline — not three services. All three
+   lead to /services, which is now the single destination. */
+const capabilityRows = [
   {
-    href: "/services",
-    name: "AI Consulting",
-    tag: "Strategy · Automation · Training · Integration",
+    name: "Strategy & Advisory",
+    tag: "Readiness · Opportunity mapping · Roadmapping",
   },
   {
-    href: "/services",
-    name: "Personal Consulting",
-    tag: "Career · Life Coaching · Study · Social Skills",
+    name: "Implementation & Automation",
+    tag: "Workflows · Integration · Custom tooling",
   },
   {
-    href: "/services",
-    name: "Digital Consulting",
-    tag: "Web · Social Media · SEO · Automation",
+    name: "Enablement & Upskilling",
+    tag: "Upskilling · Adoption · Change management",
   },
-];
-
-const introStats = [
-  { label: "Service disciplines", value: "3" },
-  { label: "Outcome focused", value: "100%", valueClassName: "with-percent" },
-  { label: "Auckland based", value: "NZ" },
 ];
 
 export default function HomeIntro() {
@@ -32,38 +25,29 @@ export default function HomeIntro() {
         <h2 className="intro-heading">
           One firm.
           <br />
-          <em>Three disciplines.</em>
+          <em>One discipline.</em>
         </h2>
         <p className="intro-body">
-          Whether you&apos;re looking to harness AI, grow your career, or sharpen
-          your digital presence — Saha brings together expertise across three
-          disciplines so your advisor understands the full picture and gives you
-          guidance that actually connects.
+          Most AI consultants sell strategy decks. We sell things that run.
+          Every project starts from the same question: does this actually save
+          time or make money, or is it just a slide? Three capabilities, one
+          discipline, no hedging.
         </p>
-        <div className="intro-stat-row">
-          {introStats.map((stat) => (
-            <div className="intro-stat" key={stat.label}>
-              <div className="intro-stat-num">
-                {stat.valueClassName === "with-percent" ? (
-                  <>
-                    100<span>%</span>
-                  </>
-                ) : (
-                  stat.value
-                )}
-              </div>
-              <div className="intro-stat-label">{stat.label}</div>
-            </div>
-          ))}
-        </div>
+        <Link className="intro-cta" href="/case-studies">
+          See what we&apos;ve built →
+        </Link>
       </div>
 
       <div className="intro-right">
-        {serviceRows.map((service) => (
-          <Link className="intro-service-row" href={service.href} key={service.name}>
+        {capabilityRows.map((capability) => (
+          <Link
+            className="intro-service-row"
+            href="/services"
+            key={capability.name}
+          >
             <div>
-              <div className="intro-service-name">{service.name}</div>
-              <div className="intro-service-tag">{service.tag}</div>
+              <div className="intro-service-name">{capability.name}</div>
+              <div className="intro-service-tag">{capability.tag}</div>
             </div>
             <span className="intro-service-arr">→</span>
           </Link>

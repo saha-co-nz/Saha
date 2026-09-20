@@ -7,25 +7,23 @@ export default function HomeHero() {
       <div className="hero-gradient" />
       <div className="hero-grain" />
       <div className="hero-content">
-        <p className="hero-location">Australasia</p>
+        <p className="hero-location">Auckland, New Zealand</p>
         <h1 className="hero-headline">
-          We make individuals
+          We build AI
           <br />
-          &amp; businesses
-          <br />
-          <em>work better.</em>
+          <em>that actually gets used.</em>
         </h1>
         <p className="hero-sub">
-          AI, personal, and digital consulting — all under one roof. Saha is
-          Australasia&apos;s partner for individuals and organisations that want
-          to grow with clarity and confidence.
+          Saha is an AI consultancy in Auckland. We build the systems ourselves
+          before we sell them — so when we tell you something works, it is
+          because it is already running in our own business, or in a client&apos;s.
         </p>
         <div className="hero-actions">
           <Link className="btn-hero-primary" href="/contactus">
             Work with us →
           </Link>
-          <Link className="btn-hero-secondary" href="/services">
-            Explore services ↓
+          <Link className="btn-hero-secondary" href="/case-studies">
+            See what we&apos;ve built ↓
           </Link>
         </div>
       </div>
