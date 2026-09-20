@@ -1,3 +1,5 @@
+import RegulatoryMap from "./RegulatoryMap";
+
 import { wwaGovernanceCommitments, wwaGovernancePrinciples, wwaGovernanceStructures } from "./data";
 
 type GovernancePageProps = {
@@ -22,6 +24,7 @@ export default function GovernancePage({ asSection = false }: GovernancePageProp
             trust — trust that comes from honesty, discipline, and doing the
             right thing even when no one is watching.
           </p>
+          <RegulatoryMap />
         </div>
         <div className="gov-hero-right">
           {wwaGovernancePrinciples.map((principle) => (

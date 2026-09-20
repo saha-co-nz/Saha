@@ -1003,13 +1003,13 @@ body {
   margin-top: 0.05rem;
 }
 .fdb-text {
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.28);
+  color: rgba(255, 255, 255, 0.62);
 }
 .fdb-text strong {
-  color: rgba(255, 255, 255, 0.45);
-  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.7rem;
   letter-spacing: 0.04em;
 }
 .footer-simple {
@@ -1382,7 +1382,8 @@ body {
   color: var(--accent-light);
   margin-bottom: 1.2rem;
 }
-.values-hero-left h1 {
+.values-hero-left h1,
+.values-hero-left h2 {
   font-family: var(--font-display);
   font-size: clamp(3rem, 5vw, 5rem);
   font-weight: 900;
@@ -1391,7 +1392,8 @@ body {
   line-height: 1;
   margin-bottom: 1.5rem;
 }
-.values-hero-left h1 em {
+.values-hero-left h1 em,
+.values-hero-left h2 em {
   font-style: italic;
   color: rgba(255, 255, 255, 0.35);
 }
@@ -1688,7 +1690,8 @@ body {
   color: var(--accent-light);
   margin-bottom: 1.2rem;
 }
-.gov-hero-left h1 {
+.gov-hero-left h1,
+.gov-hero-left h2 {
   font-family: var(--font-display);
   font-size: clamp(3rem, 5vw, 5rem);
   font-weight: 900;
@@ -1697,7 +1700,8 @@ body {
   line-height: 1;
   margin-bottom: 1.5rem;
 }
-.gov-hero-left h1 em {
+.gov-hero-left h1 em,
+.gov-hero-left h2 em {
   font-style: italic;
   color: rgba(255, 255, 255, 0.35);
 }
@@ -3307,7 +3311,7 @@ body {
 }
 .form-note {
   font-size: 0.73rem;
-  color: rgba(10, 22, 40, 0.38);
+  color: rgba(10, 22, 40, 0.62);
   line-height: 1.5;
   max-width: 240px;
 }
@@ -3405,7 +3409,7 @@ body {
 }
 .doc-meta {
   font-size: 0.8rem;
-  color: rgba(10, 22, 40, 0.4);
+  color: rgba(10, 22, 40, 0.62);
 }
 .doc-meta a {
   color: var(--accent);
@@ -3961,13 +3965,14 @@ body {
 }
 #main-footer .fdb-text {
   font-family: "DM Mono", monospace;
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.25);
+  /* Was 2.2:1 on every page. This is the no-regulated-advice notice. */
+  color: rgba(255, 255, 255, 0.62);
 }
 #main-footer .fdb-text strong {
-  color: rgba(255, 255, 255, 0.45);
-  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.68rem;
 }
 
 /* ── Hide inner footers when main footer exists ── */
@@ -4559,4 +4564,90 @@ body {
 .apply-success a {
   color: var(--accent);
   border-bottom: 1px solid rgba(37, 99, 235, 0.4);
+}
+/* ── Governance: regulatory map ──
+   Fills the left column of the governance hero, which sat empty because the
+   grid bottom-aligns a short column against five cards. */
+.gov-hero-left {
+  align-self: start;
+}
+.reg-map {
+  margin: 2.5rem 0 0;
+  max-width: 560px;
+}
+.reg-map__cap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.9rem;
+}
+.reg-map__cap-title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+}
+.reg-map__cap-note {
+  font-size: 0.74rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+.reg-map__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+.reg-map__land polygon {
+  fill: rgba(255, 255, 255, 0.09);
+  stroke: rgba(255, 255, 255, 0.28);
+  stroke-width: 1;
+  stroke-linejoin: round;
+}
+/* New Zealand is the subject, so it carries the accent. */
+.reg-map__land--home polygon {
+  fill: rgba(96, 165, 250, 0.26);
+  stroke: var(--accent-bright);
+  stroke-width: 1.4;
+}
+.reg-map__dot {
+  fill: var(--accent-bright);
+}
+.reg-map__dot--near {
+  fill: rgba(255, 255, 255, 0.55);
+}
+.reg-map__key {
+  list-style: none;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+.reg-map__item {
+  display: grid;
+  gap: 0.15rem;
+  padding-left: 0.85rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.18);
+}
+.reg-map__item--home {
+  border-left-color: var(--accent-bright);
+}
+.reg-map__item--offshore {
+  border-left-style: dashed;
+}
+.reg-map__item-title {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--white);
+}
+.reg-map__item-body {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.66);
+}
+@media (max-width: 900px) {
+  .reg-map {
+    max-width: none;
+  }
 }
