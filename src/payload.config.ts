@@ -15,6 +15,8 @@ import Values from "./collections/Values";
 import Contacts from "./collections/Contacts";
 import Services from "./collections/Services";
 import Ulux from "./collections/UluxOptions";
+import Applications from "./collections/Applications";
+import ApplicationFiles from "./collections/ApplicationFiles";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -35,6 +37,8 @@ export default buildConfig({
     Contacts,
     Services,
     Ulux,
+    Applications,
+    ApplicationFiles,
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
@@ -53,6 +57,7 @@ export default buildConfig({
     s3Storage({
       collections: {
         media: true,
+        "application-files": true,
       },
       bucket: process.env.S3_BUCKET!,
       config: {

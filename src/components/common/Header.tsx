@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const navItems = [
@@ -15,9 +15,7 @@ const navItems = [
 
 export default function Header() {
   const pathname = usePathname();
-  const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
-  const showBack = pathname !== "/";
 
   const isActive = (href: string) => {
     if (href === "/") {
@@ -87,19 +85,8 @@ export default function Header() {
         ))}
       </div>
       <div className="nav-right">
-        <button
-          className={`nav-back-btn${showBack ? " visible" : ""}`}
-          id="global-nav-back"
-          onClick={() => {
-            closeMenu();
-            router.back();
-          }}
-          type="button"
-        >
-          Back
-        </button>
         <Link className="nav-work-btn" href="/contactus" id="nav-btn-wuw">
-          Work with us
+          Contact us
         </Link>
         <button
           aria-controls="nav-mobile"
@@ -141,7 +128,7 @@ export default function Header() {
               id="nav-btn-wuw-m"
               onClick={closeMenu}
             >
-              Work with us
+              Contact us
             </Link>
           </div>
         </>

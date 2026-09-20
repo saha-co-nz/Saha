@@ -3,6 +3,8 @@
 import nodemailer from "nodemailer";
 import { google } from "googleapis";
 
+import { CONTACT_EMAIL } from "@/src/lib/site";
+
 const oAuth2Client = new google.auth.OAuth2(
   process.env.GMAIL_CLIENT_ID,
   process.env.GMAIL_CLIENT_SECRET,
@@ -95,7 +97,8 @@ export async function sendFormEmail(formData: FormData) {
 
     await transporter.sendMail({
       from: `"Saha Contact Form" <${process.env.GMAIL_USER}>`,
-      to: process.env.GMAIL_USER,
+      /* Explicit rather than whatever GMAIL_USER happens to be set to. */
+      to: CONTACT_EMAIL,
       replyTo: email,
       subject,
       html: `

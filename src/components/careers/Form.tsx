@@ -2,6 +2,10 @@
 
 import { ChangeEvent, FormEvent, useState } from "react";
 
+import { CONTACT_EMAIL } from "@/src/lib/site";
+
+import { sendApplicationEmail } from "./ApplyAction";
+
 import {
   careersApplyPromises,
   careersApplyStreamOptions,
@@ -11,10 +15,26 @@ import {
 export default function CareersApplyForm() {
   const [fileName, setFileName] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [failed, setFailed] = useState(false);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  /* This used to preventDefault and flip straight to the success screen, so
+     every application was silently discarded. It only reports success now if
+     the send actually resolved. */
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+    setFailed(false);
+    setSending(true);
+
+    try {
+      await sendApplicationEmail(new FormData(event.currentTarget));
+      setSubmitted(true);
+    } catch (error) {
+      console.error(error);
+      setFailed(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -190,6 +210,7 @@ export default function CareersApplyForm() {
                 >
                   <input
                     accept=".pdf,.doc,.docx"
+                    name="cv"
                     onChange={handleFileChange}
                     required
                     type="file"
@@ -231,7 +252,18 @@ export default function CareersApplyForm() {
                   Your information is kept confidential and only used for this
                   application.
                 </p>
-                <button className="btn-apply-submit" type="submit">
+                {failed ? (
+                  <p className="af-error" role="alert">
+                    Something went wrong sending your application. Email it to{" "}
+                    <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> and
+                    we&rsquo;ll pick it up from there.
+                  </p>
+                ) : null}
+                <button
+                  className="btn-apply-submit"
+                  disabled={sending}
+                  type="submit"
+                >
                   Submit application <span>→</span>
                 </button>
               </div>

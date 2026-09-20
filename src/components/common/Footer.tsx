@@ -6,7 +6,8 @@ const footerItems = [
   { href: "/services", label: "Services" },
   { href: "/kali", label: "Kali" },
   { href: "/careers", label: "Careers" },
-  { href: "/contactus", label: "Work With Us" },
+  { href: "/case-studies", label: "Case Studies" },
+  { href: "/contactus", label: "Contact" },
 ];
 
 export default function Footer() {
@@ -25,7 +26,7 @@ export default function Footer() {
           ))}
         </div>
         <span className="footer-note">
-          © 2026 Saha NZ Limited — Australasia
+          © 2022–2026 Saha Group ANZ
         </span>
       </div>
       <div className="footer-disclaimer-bar">
