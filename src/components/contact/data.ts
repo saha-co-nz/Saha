@@ -3,7 +3,7 @@ import { CAPABILITY_NAMES } from "@/src/lib/capabilities";
 /* "What happens next" from the design source. The previous four promises
    (fast response / confidential / no obligation / NZ-based team) were generic
    reassurance; these describe what actually happens after someone submits. */
-export const workWithUsPromises = [
+export const contactPromises = [
   {
     description: "We read what you sent and reply, no auto-responder loop.",
     icon: "\u26a1",
@@ -25,7 +25,7 @@ export const workWithUsPromises = [
 
 /* The three ways in. Charities and schools are routed to Kali Foundation
    rather than turned away — see the note under the form. */
-export const workWithUsPaths = [
+export const contactPaths = [
   {
     body: "Not sure where to start. We'll look at your business and tell you honestly if AI is worth pursuing yet.",
     price: "Free",
@@ -43,7 +43,7 @@ export const workWithUsPaths = [
   },
 ];
 
-export const workWithUsSourceOptions = [
+export const contactSourceOptions = [
   "Google search",
   "LinkedIn",
   "Referral from a colleague",
@@ -56,12 +56,12 @@ export const workWithUsSourceOptions = [
    previously offered career coaching, life coaching, study coaching, social
    skills, web presence, social media and SEO — every one a cut service that a
    business could still tick and submit an enquiry for. */
-export const workWithUsServiceOptions = [
+export const contactServiceOptions = [
   ...CAPABILITY_NAMES,
   "Not sure / Other",
 ];
 
-export const workWithUsTimelineOptions = [
+export const contactTimelineOptions = [
   "As soon as possible",
   "Within 1 month",
   "1-3 months",

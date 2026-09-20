@@ -54,12 +54,12 @@ export async function sendFormEmail(formData: FormData) {
     .map((value) => value.toString().trim())
     .filter(Boolean);
 
-  const isWorkWithUs = Boolean(company);
-  const subject = isWorkWithUs
-    ? `[Work With Us] New Enquiry: ${company}`
+  const isBusinessEnquiry = Boolean(company);
+  const subject = isBusinessEnquiry
+    ? `[Business enquiry] ${company}`
     : `[Contact Form] New Query: ${topic}`;
-  const footerLabel = isWorkWithUs ? "work with us" : "contact";
-  const detailRows = isWorkWithUs
+  const footerLabel = isBusinessEnquiry ? "business enquiry" : "contact";
+  const detailRows = isBusinessEnquiry
     ? [
         `<p><strong>Company:</strong> ${escapeHtml(company)}</p>`,
         role ? `<p><strong>Role:</strong> ${escapeHtml(role)}</p>` : "",

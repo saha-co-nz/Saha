@@ -20,7 +20,7 @@ export default function HomeHero() {
         </p>
         <div className="hero-actions">
           <Link className="btn-hero-primary" href="/contactus">
-            Work with us →
+            Contact us →
           </Link>
           <Link className="btn-hero-secondary" href="/case-studies">
             See what we&apos;ve built ↓

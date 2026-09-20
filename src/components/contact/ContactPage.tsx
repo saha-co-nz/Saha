@@ -1,10 +1,10 @@
-import WorkWithUsForm from "./WorkWithUsForm";
+import ContactForm from "./ContactForm";
 
-export default function WorkWithUsPage() {
+export default function ContactPage() {
   return (
     <div id="section-wuw">
       <div className="page active" id="wuw-page-main">
-        <WorkWithUsForm />
+        <ContactForm />
       </div>
     </div>
   );

@@ -21,7 +21,7 @@ export default function HomeCTA() {
       </p>
       <div className="cta-actions">
         <Link className="btn-cta" href="/contactus">
-          Work with us →
+          Contact us →
         </Link>
         <Link className="btn-cta-outline" href="/careers">
           View careers

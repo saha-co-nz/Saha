@@ -6,16 +6,16 @@ import { useState } from "react";
 
 import { sendFormEmail } from "./Form";
 import {
-  workWithUsPaths,
-  workWithUsPromises,
-  workWithUsServiceOptions,
-  workWithUsSourceOptions,
-  workWithUsTimelineOptions,
+  contactPaths,
+  contactPromises,
+  contactServiceOptions,
+  contactSourceOptions,
+  contactTimelineOptions,
 } from "./data";
 
 const budgetFormatter = new Intl.NumberFormat("en-NZ");
 
-export default function WorkWithUsForm() {
+export default function ContactForm() {
   const [budget, setBudget] = useState(2500);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
@@ -46,7 +46,7 @@ export default function WorkWithUsForm() {
         <div className="left-overlay" />
         <div className="left-content">
           <div className="left-top">
-            <p className="left-eyebrow">Work with us</p>
+            <p className="left-eyebrow">Contact us</p>
             <h1 className="left-title">
               Let&apos;s build
               <br />
@@ -59,7 +59,7 @@ export default function WorkWithUsForm() {
             </p>
           </div>
           <div className="promises">
-            {workWithUsPromises.map((promise) => (
+            {contactPromises.map((promise) => (
               <div className="promise" key={promise.title}>
                 <div className="promise-icon">{promise.icon}</div>
                 <div className="promise-text">
@@ -102,7 +102,7 @@ export default function WorkWithUsForm() {
             </div>
 
             <div className="path-grid">
-              {workWithUsPaths.map((path) => (
+              {contactPaths.map((path) => (
                 <div className="path-card" key={path.title}>
                   <span className="path-price">{path.price}</span>
                   <h3 className="path-title">{path.title}</h3>
@@ -192,7 +192,7 @@ export default function WorkWithUsForm() {
                     <option disabled value="">
                       Select an option
                     </option>
-                    {workWithUsSourceOptions.map((option) => (
+                    {contactSourceOptions.map((option) => (
                       <option key={option}>{option}</option>
                     ))}
                   </select>
@@ -204,7 +204,7 @@ export default function WorkWithUsForm() {
               <div className="field">
                 <p className="services-label">Services you&apos;re interested in</p>
                 <div className="services-check-grid">
-                  {workWithUsServiceOptions.map((service) => (
+                  {contactServiceOptions.map((service) => (
                     <label
                       className={`check-item${selectedServices.includes(service) ? " is-checked" : ""}`}
                       key={service}
@@ -253,7 +253,7 @@ export default function WorkWithUsForm() {
                     <option disabled value="">
                       Select a timeframe
                     </option>
-                    {workWithUsTimelineOptions.map((option) => (
+                    {contactTimelineOptions.map((option) => (
                       <option key={option}>{option}</option>
                     ))}
                   </select>
