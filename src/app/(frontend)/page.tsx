@@ -8,6 +8,7 @@ import HomeHero from "@/src/components/home/HomeHero";
 import HomeIntro from "@/src/components/home/HomeIntro";
 import HomeTicker from "@/src/components/home/HomeTicker";
 import HomeValuesStrip from "@/src/components/home/HomeValuesStrip";
+import StartSmaller from "@/src/components/common/StartSmaller";
 
 export default function HomePage() {
   return (
@@ -20,6 +21,7 @@ export default function HomePage() {
         <HomeCredibility />
         <HomeIntro />
         <HomeFeatureBand />
+        <StartSmaller />
         <HomeValuesStrip />
         <HomeCTA />
       </div>

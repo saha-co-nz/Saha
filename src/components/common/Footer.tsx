@@ -14,7 +14,8 @@ export default function Footer() {
     <footer className="site-footer" id="main-footer">
       <div className="footer-top">
         <Link className="footer-logo" href="/" id="main-footer-logo">
-          saha.
+          <img alt="" className="logo-mark" src="/saha-logo.png" />
+          <span>saha.</span>
         </Link>
         <div className="footer-links-row">
           {footerItems.map((item) => (

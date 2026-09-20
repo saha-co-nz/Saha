@@ -5000,3 +5000,205 @@ nav {
     padding: 4rem 1.5rem;
   }
 }
+
+/* ── Start smaller: the two low-commitment ways in ── */
+.start-smaller {
+  background: var(--navy-mid);
+  padding: 6rem 2rem;
+  border-block: 1px solid rgba(255, 255, 255, 0.07);
+}
+.start-smaller-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.offer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem;
+  margin-top: 3rem;
+}
+.offer-card {
+  display: flex;
+  flex-direction: column;
+  padding: 2.2rem 2rem;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 2px solid var(--accent-bright);
+}
+.offer-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  margin-bottom: 1rem;
+}
+.offer-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 0.9rem;
+  line-height: 1.2;
+}
+.offer-body {
+  font-size: 0.93rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.66);
+  margin: 0 0 1.8rem;
+  flex-grow: 1;
+}
+.offer-cta {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-bright);
+  border-bottom: 1px solid rgba(96, 165, 250, 0.35);
+  padding-bottom: 2px;
+}
+.offer-cta:hover {
+  border-bottom-color: var(--accent-bright);
+}
+.offer-note {
+  margin: 2.2rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 58ch;
+}
+.offer-note a {
+  color: var(--accent-bright);
+  border-bottom: 1px solid rgba(96, 165, 250, 0.35);
+}
+@media (max-width: 800px) {
+  .offer-grid {
+    grid-template-columns: 1fr;
+  }
+  .start-smaller {
+    padding: 4rem 1.5rem;
+  }
+}
+
+/* ── Responsible AI ── */
+.responsible-ai {
+  background: var(--navy);
+  padding: 6rem 2rem;
+  border-block: 1px solid rgba(255, 255, 255, 0.07);
+}
+.responsible-ai-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.responsible-ai-lede {
+  margin: 1.6rem 0 0;
+  max-width: 58ch;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.62);
+}
+.responsible-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  margin-top: 3.2rem;
+}
+.responsible-card {
+  padding: 2rem 1.8rem;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 2px solid var(--accent-bright);
+}
+.responsible-card-title {
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 0.85rem;
+}
+.responsible-card-body {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.66);
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .responsible-grid {
+    grid-template-columns: 1fr;
+  }
+  .responsible-ai {
+    padding: 4rem 1.5rem;
+  }
+}
+
+/* ── Work With Us: the three ways in ── */
+.path-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.6rem;
+}
+.path-card {
+  padding: 1.4rem 1.3rem;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 2px solid var(--accent-bright);
+}
+.path-price {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  margin-bottom: 0.6rem;
+}
+.path-title {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
+}
+.path-body {
+  font-size: 0.83rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+.charity-note {
+  margin: 1.6rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 52ch;
+}
+.charity-note a {
+  color: var(--accent-bright);
+  border-bottom: 1px solid rgba(96, 165, 250, 0.35);
+}
+@media (max-width: 900px) {
+  .path-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Logomark ──
+   The mark sits beside the wordmark rather than replacing it, as in the
+   design source. Decorative, so the alt is empty — the adjacent "saha."
+   already names the link. */
+.nav-logo,
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+.logo-mark {
+  height: 28px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+}
+.footer-logo .logo-mark {
+  height: 32px;
+}

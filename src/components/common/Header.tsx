@@ -71,7 +71,8 @@ export default function Header() {
         id="global-nav-logo"
         onClick={closeMenu}
       >
-        saha.
+        <img alt="" className="logo-mark" src="/saha-logo.png" />
+        <span>saha.</span>
       </Link>
       <div className="nav-center" id="nav-center">
         {navItems.map((item) => (

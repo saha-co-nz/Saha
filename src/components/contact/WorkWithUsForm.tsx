@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import { sendFormEmail } from "./Form";
 import {
+  workWithUsPaths,
   workWithUsPromises,
   workWithUsServiceOptions,
   workWithUsSourceOptions,
@@ -98,6 +99,16 @@ export default function WorkWithUsForm() {
                 Fields marked <span style={{ color: "var(--accent)" }}>*</span>{" "}
                 are required.
               </p>
+            </div>
+
+            <div className="path-grid">
+              {workWithUsPaths.map((path) => (
+                <div className="path-card" key={path.title}>
+                  <span className="path-price">{path.price}</span>
+                  <h3 className="path-title">{path.title}</h3>
+                  <p className="path-body">{path.body}</p>
+                </div>
+              ))}
             </div>
 
             <Form action={handleSubmit} className="contact-form" noValidate>
@@ -272,6 +283,11 @@ export default function WorkWithUsForm() {
                   Send message <span className="arrow">→</span>
                 </button>
               </div>
+              <p className="charity-note">
+                Charities and schools: this form is for business clients. Head
+                to <Link href="/kali">Kali Foundation</Link> instead &mdash;
+                that&rsquo;s where your engagement lives.
+              </p>
             </Form>
 
             {status === "error" ? (
