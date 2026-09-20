@@ -32,6 +32,8 @@ export default function MailSorter() {
         { label: "Run now", variant: "ghost" },
         { label: "Send digest", variant: "solid" },
       ]}
+      id="mail-sorter"
+      index="02"
       address="saha.co.nz/agents/mail-sorter"
       eyebrow="Internal ops · Mail Sorter"
       headline={

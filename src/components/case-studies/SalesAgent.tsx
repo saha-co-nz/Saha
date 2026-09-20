@@ -120,6 +120,8 @@ export default function SalesAgent() {
         { label: "Re-run research", variant: "ghost" },
         { label: "Export briefs", variant: "solid" },
       ]}
+      id="sales-agent"
+      index="03"
       address="saha.co.nz/agents/sales-research"
       eyebrow="Internal ops · Sales Agent"
       headline={

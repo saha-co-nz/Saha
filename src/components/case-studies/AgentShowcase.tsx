@@ -41,6 +41,10 @@ export type AgentAction = {
 };
 
 export type AgentShowcaseProps = {
+  /** "01" / "02" / "03" — gives the three a visible sequence. */
+  index: string;
+  /** Anchor target, so the contents strip at the top can jump here. */
+  id: string;
   eyebrow: string;
   headline: ReactNode;
   lede: string;
@@ -107,6 +111,8 @@ function StatBlock({ stat }: { stat: AgentStat }) {
 }
 
 export default function AgentShowcase({
+  index,
+  id,
   eyebrow,
   headline,
   lede,
@@ -121,10 +127,23 @@ export default function AgentShowcase({
   children,
 }: AgentShowcaseProps) {
   return (
-    <section className="agent-showcase">
-      <p className="as-eyebrow">{eyebrow}</p>
-      <h2 className="as-headline">{headline}</h2>
-      <p className="as-lede">{lede}</p>
+    <section className="agent-showcase" id={id}>
+      {/* Headline and the number sit together, above the screenshot. The
+          figure used to live at the very bottom, after the frame, which put
+          the payoff last and buried it. */}
+      <header className="as-head">
+        <div className="as-head__main">
+          <div className="as-head__tag">
+            <span className="as-index">{index}</span>
+            <p className="as-eyebrow">{eyebrow}</p>
+          </div>
+          <h2 className="as-headline">{headline}</h2>
+          <p className="as-lede">{lede}</p>
+        </div>
+        <aside className="as-head__stat">
+          <StatBlock stat={stat} />
+        </aside>
+      </header>
 
       <div className="as-frame">
         <div className="as-frame__bar">
@@ -174,13 +193,10 @@ export default function AgentShowcase({
         ) : null}
       </div>
 
-      <div className="as-result">
-        <div>
-          <p className="as-result__label">What it replaced</p>
-          <p className="as-result__replaced">{replaced}</p>
-        </div>
-        <StatBlock stat={stat} />
-      </div>
+      <footer className="as-replaced">
+        <p className="as-result__label">What it replaced</p>
+        <p className="as-result__replaced">{replaced}</p>
+      </footer>
     </section>
   );
 }

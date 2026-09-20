@@ -110,6 +110,8 @@ export default function OwairoaBoardReporting() {
         { label: "Review Pass 1", variant: "ghost" },
         { label: "Generate pack", variant: "solid" },
       ]}
+      id="board-reporting"
+      index="01"
       address="saha.co.nz/agents/board-reporting"
       eyebrow="Client engagement · Board Reporting"
       headline={
