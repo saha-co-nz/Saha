@@ -68,7 +68,8 @@ body {
 }
 
 /* ── NAV ── */
-nav {
+/* Scoped: a bare element rule here captures every nav/footer on the site. */
+#main-nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -816,7 +817,8 @@ nav {
 }
 
 /* ── FOOTER ── */
-footer {
+/* Scoped: a bare element rule here captures every nav/footer on the site. */
+.site-footer {
   background: rgba(0, 0, 0, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   padding: 2.5rem 6rem;
@@ -829,12 +831,6 @@ footer {
   font-weight: 900;
   font-size: 1.2rem;
   color: var(--white);
-}
-.footer-note {
-  font-size: 0.58rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.2);
 }
 .footer-links {
   display: flex;
@@ -956,7 +952,8 @@ body {
 /* ══════════════════════════════
    GLOBAL NAV
 ══════════════════════════════ */
-nav {
+/* Scoped: a bare element rule here captures every nav/footer on the site. */
+#main-nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -1084,14 +1081,15 @@ nav {
   color: var(--white);
   cursor: pointer;
 }
+/* Footers other than #main-footer — currently the careers simple footer.
+   This block previously declared `color` twice, so the first value never
+   applied. One declaration now, matching the main footer. */
 .footer-note {
-  /* Was 1.86:1 across every page. */
   color: rgba(255, 255, 255, 0.6);
   font-family: var(--font-mono);
   font-size: 0.58rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.25);
 }
 .footer-disclaimer-bar {
   padding: 1.4rem 6rem;
