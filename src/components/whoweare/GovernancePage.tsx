@@ -24,7 +24,6 @@ export default function GovernancePage({ asSection = false }: GovernancePageProp
             trust — trust that comes from honesty, discipline, and doing the
             right thing even when no one is watching.
           </p>
-          <RegulatoryMap />
         </div>
         <div className="gov-hero-right">
           {wwaGovernancePrinciples.map((principle) => (
@@ -38,6 +37,8 @@ export default function GovernancePage({ asSection = false }: GovernancePageProp
           ))}
         </div>
       </div>
+
+      <RegulatoryMap />
 
       <section className="gov-commitment">
         <div className="gc-header">
