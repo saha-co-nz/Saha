@@ -58,17 +58,27 @@ export const wwaValuesPageCards = [
   },
 ];
 
+/* Bios rewritten for the single discipline — the old ones sold personal
+   development coaching and a digital consulting practice, both of which are
+   now cut. Satyam's audit background leads, because an auditor building AI
+   is the position no generic agency in New Zealand can claim. */
 export const wwaPeople = [
   {
-    bio: "Satyam is a Director at Saha NZ, bringing deep expertise in AI consulting, personal development coaching, and strategic advisory. He has a strong track record of helping individuals and organisations cut through complexity, embrace the right tools, and move forward with confidence — whether that's adopting AI, navigating a career transition, or building something new.",
+    bio: "Satyam leads Saha's AI strategy and advisory work. His background is in accounting and audit — chartered accountant, audit and review at UHY Haines Norton in Auckland, specialising in New Zealand schools and charities. It means the AI recommendations he makes are held to the same standard as a financial audit: verifiable, defensible, and built to survive scrutiny rather than to win a pitch.",
+    credential:
+      "CA · Audit & review, UHY Haines Norton Auckland · NZ schools and charities",
     email: "satyam@saha.co.nz",
+    image: "/satyam.jpg",
     name: "Satyam Saha",
     phone: "+64 22 315 5751",
     role: "Director",
   },
   {
-    bio: "Daniel is a Director at Saha NZ, leading Saha's digital consulting practice. He brings a sharp eye for web presence, social media strategy, SEO, and digital automation — helping clients build an online footprint that is distinctive, functional, and built to grow. Daniel's strength lies in turning digital complexity into clear, actionable direction.",
+    bio: "Daniel leads Saha's implementation and delivery work. He built his career turning digital complexity — web presence, automation, technical systems — into something a business could actually use. That same instinct now goes into AI: he is the one who takes a strategy and makes it a working system, not just a plan.",
+    credential:
+      "Digital strategy, web systems and automation · now focused entirely on AI implementation",
     email: "danielhawes@saha.co.nz",
+    image: "/daniel.jpg",
     name: "Daniel Hawes",
     phone: "+64 22 807 3548",
     role: "Director",

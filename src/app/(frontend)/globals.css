@@ -4714,3 +4714,23 @@ nav {
 }
 /* The stats row that lived here ("3 capabilities", "100% outcome-focused")
    was filler rather than statistics, and has been removed. */
+
+/* ── Person card photography ──
+   .person-card-top was a flat navy block with no image slot. The headshot
+   sits beneath the existing gradient overlay so the name stays legible. */
+.person-card-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+}
+.person-credential {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  opacity: 0.72;
+  margin: 0 0 0.9rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(18, 25, 46, 0.12);
+}

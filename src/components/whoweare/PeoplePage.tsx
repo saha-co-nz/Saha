@@ -21,10 +21,9 @@ export default function PeoplePage({ asSection = false }: PeoplePageProps) {
             Leadership that <em>shows up.</em>
           </Heading>
           <p className="ph-body">
-            Our team brings together expertise across AI, personal development,
-            and digital consulting. What ties us together isn&apos;t just
-            experience — it&apos;s a shared commitment to doing right by our
-            clients and each other.
+            Two directors, one discipline. What ties us together is a shared
+            commitment to doing right by our clients and each other — and to
+            only recommending what we would run ourselves.
           </p>
         </div>
       </div>
@@ -34,6 +33,13 @@ export default function PeoplePage({ asSection = false }: PeoplePageProps) {
           {wwaPeople.map((person) => (
             <div className="person-card" key={person.name}>
               <div className="person-card-top">
+                <img
+                  alt=""
+                  className="person-card-photo"
+                  height={500}
+                  src={person.image}
+                  width={500}
+                />
                 <div className="person-card-top-overlay" />
                 <div className="person-card-name-overlay">
                   <h3>{person.name}</h3>
@@ -41,6 +47,7 @@ export default function PeoplePage({ asSection = false }: PeoplePageProps) {
                 </div>
               </div>
               <div className="person-card-body">
+                <p className="person-credential">{person.credential}</p>
                 <p className="person-bio">{person.bio}</p>
                 <div className="person-contacts">
                   <div className="person-contact-item">
