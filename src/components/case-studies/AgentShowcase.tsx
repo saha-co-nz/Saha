@@ -23,8 +23,10 @@ export type AgentStat =
       primary: StatFigure;
       secondary?: StatFigure;
       derived?: DerivedFigure;
-      /** Renders a visible badge when the figure is not yet client-confirmed. */
-      provisional?: boolean;
+      /** Badge text shown when the figure is not yet firm. The wording
+          differs by case — a client engagement awaiting sign-off is not the
+          same as an internal estimate that was never instrumented. */
+      provisional?: string;
     }
   | {
       /** Used when real numbers are not yet available. Carries a claim that is
@@ -98,9 +100,7 @@ function StatBlock({ stat }: { stat: AgentStat }) {
       ) : null}
 
       {stat.provisional ? (
-        <span className="as-stat__provisional">
-          Provisional — pending client confirmation
-        </span>
+        <span className="as-stat__provisional">{stat.provisional}</span>
       ) : null}
     </div>
   );

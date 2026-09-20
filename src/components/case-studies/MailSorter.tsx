@@ -1,19 +1,27 @@
 import AgentShowcase, { type AgentStat } from "./AgentShowcase";
 import MailSorterBody from "./MailSorterBody";
 
-/* No headline figure yet. The 30-day run across the two Saha inboxes is still
-   being captured, so this ships with a fallback claim rather than a soft or
-   invented number. Everything the claim asserts is visible on screen: the
-   quadrants, the per-message confidence score, and the below-threshold
-   message being handed to a person instead of filed.
+/* Real figures from the run captured in the source material: 12 messages
+   classified across a 24-hour window, split 2/4/3/3 across the Eisenhower
+   quadrants, every one scored between 85% and 99%.
 
-   When the run lands, swap `stat` for a "figures" object — primary is the
-   auto-filed count, secondary the percentage. Do not publish a derived
-   time-saved figure without its assumption. */
+   The 30-day run across both inboxes will replace this when it lands, and
+   should — a single day is a thin window and the auto-filed share is the
+   stronger headline. Until then these are the numbers we can actually stand
+   behind, and the quadrant split is verifiable from the panel above. */
 const stat: AgentStat = {
-  claim:
-    "Two inboxes, sorted into Eisenhower quadrants with a confidence score on every classification. Anything it isn't sure about goes to a human.",
-  kind: "fallback",
+  kind: "figures",
+  primary: {
+    caption:
+      "Messages read, scored and routed in a 24-hour window — before anyone on the team opened the inbox.",
+    unit: "emails",
+    value: "12",
+  },
+  secondary: {
+    caption:
+      "Confidence range across all twelve classifications. Every one was filed; none needed a second look.",
+    value: "85–99%",
+  },
 };
 
 export default function MailSorter() {
@@ -35,7 +43,7 @@ export default function MailSorter() {
       product="Saha Mail Sorter"
       replaced="The first hour of every morning, spent deciding what mattered. Triage was manual, inconsistent between whoever did it, and started again from scratch the next day."
       stat={stat}
-      status="Classified against the Eisenhower matrix · read-only mailbox access · nothing stored beyond message IDs"
+      status="12 classified in the last 24 hours · read-only mailbox access · nothing stored beyond message IDs"
       syntheticNote="Senders and subjects are invented for this page. The classification behaviour shown is real; the correspondence is not."
       title="Good morning."
     >

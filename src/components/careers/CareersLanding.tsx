@@ -5,6 +5,8 @@ import CareersSimpleFooter from "./CareersSimpleFooter";
 import {
   careersBadges,
   careersInternshipStreams,
+  careersProcess,
+  careersTestimonials,
   careersLandingStats,
   careersValueCards,
 } from "./data";
@@ -138,6 +140,46 @@ export default function CareersLanding() {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="process-section">
+          <div className="process-inner">
+          <p className="section-label">The process</p>
+          <h2 className="section-title white">
+            How it <em>actually works.</em>
+          </h2>
+          <ol className="process-list">
+            {careersProcess.map((stage) => (
+              <li className="process-step" key={stage.step}>
+                <span className="process-step-num">{stage.step}</span>
+                <h4 className="process-step-title">{stage.title}</h4>
+                <p className="process-step-body">{stage.body}</p>
+              </li>
+            ))}
+          </ol>
+          </div>
+        </section>
+
+        <section className="testimonials-section">
+          <div className="testimonials-inner">
+          <p className="section-label">From our interns</p>
+          <h2 className="section-title white">
+            What it&apos;s <em>actually like.</em>
+          </h2>
+          <div className="testimonial-grid">
+            {careersTestimonials.map((person) => (
+              <figure className="testimonial" key={person.name}>
+                <blockquote className="testimonial-quote">
+                  {person.quote}
+                </blockquote>
+                <figcaption className="testimonial-attribution">
+                  <span className="testimonial-name">{person.name}</span>
+                  <span className="testimonial-role">{person.role}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
           </div>
         </section>
 

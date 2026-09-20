@@ -19,8 +19,6 @@ type Mail = {
   internal?: boolean;
   confidence: number;
   subject: string;
-  /** Below the filing threshold — routed to a person instead. */
-  handoff?: boolean;
 };
 
 const quadrants: {
@@ -68,10 +66,9 @@ const quadrants: {
         subject: "Draft newsletter for review",
       },
       {
-        confidence: 61,
-        from: "hello@kowhai-property.co.nz",
-        handoff: true,
-        subject: "Re: the thing we discussed",
+        confidence: 85,
+        from: "m.russo@kowhai-property.co.nz",
+        subject: "Client brief — feedback requested",
       },
     ],
     variant: "schedule",
@@ -224,7 +221,7 @@ export default function MailSorterBody() {
               </div>
               {quadrant.mails.map((mail, index) => (
                 <div
-                  className={`as-mail${mail.handoff ? " as-mail--handoff" : ""}`}
+                  className="as-mail"
                   key={mail.from + mail.subject}
                   style={
                     animate ? { animationDelay: `${index * 70}ms` } : undefined
@@ -240,11 +237,6 @@ export default function MailSorterBody() {
                     <span className="as-conf">{mail.confidence}%</span>
                   </div>
                   <p className="as-mail__subj">{mail.subject}</p>
-                  {mail.handoff ? (
-                    <span className="as-mail__handoff-note">
-                      Below threshold — sent to a person, not filed.
-                    </span>
-                  ) : null}
                 </div>
               ))}
             </div>

@@ -287,7 +287,7 @@
   font-family: var(--as-display);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--as-blue);
+  color: var(--as-ink-soft);
   margin-top: 16px;
   display: block;
   line-height: 1;
@@ -861,22 +861,6 @@
   margin-right: 5px;
 }
 
-/* Low-confidence classifications are handed to a person rather than filed.
-   This is the claim the fallback stat makes, so it has to be visible. */
-.as-mail--handoff {
-  background: var(--as-hold-wash);
-  margin: 0 -8px;
-  padding: 7px 8px;
-  border-bottom-color: transparent;
-}
-
-.as-mail__handoff-note {
-  display: block;
-  font-size: 0.7rem;
-  color: var(--as-hold);
-  margin-top: 3px;
-}
-
 /* Staggered entrance once the panel scrolls into view. Items are visible by
    default — the class only animates them — so no-JS and reduced-motion both
    get the finished state rather than an empty grid. */
@@ -1150,4 +1134,60 @@
   .cs-page__stack {
     gap: 68px;
   }
+}
+
+/* ── Sales agent pipeline ──
+   The agent owns more than research and scoring — outreach, follow-ups and
+   CRM updates are all inside the loop. The strip makes the scope legible,
+   and marks the one stage where a person still decides. */
+
+.as-pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  background: var(--as-line);
+  border: 1px solid var(--as-line);
+  border-bottom: none;
+}
+
+.as-stage {
+  background: var(--as-bg);
+  padding: 11px 14px;
+  flex: 1 1 0;
+  min-width: 132px;
+}
+
+.as-stage--human {
+  background: var(--as-blue-wash);
+}
+
+.as-stage__step {
+  font-family: var(--as-body);
+  font-size: 0.66rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--as-grey);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.as-stage__name {
+  font-family: var(--as-label);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--as-ink);
+  display: block;
+  margin-bottom: 3px;
+}
+
+.as-stage--human .as-stage__name {
+  color: var(--as-blue);
+}
+
+.as-stage__note {
+  font-size: 0.72rem;
+  color: var(--as-grey);
+  line-height: 1.4;
+  margin: 0;
 }

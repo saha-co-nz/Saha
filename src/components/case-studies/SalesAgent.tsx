@@ -51,13 +51,65 @@ const prospects = [
   },
 ] as const;
 
-/* No headline figure yet. The run over the existing prospect list is still
-   being generated. When it lands, the REJECTION count is the primary stat —
-   "screened 140, rejected 96" is the story, and it is what makes the rejected
-   card land. Do not lead with the qualification rate. */
+const pipeline = [
+  {
+    name: "Research",
+    note: "Builds a picture of the prospect from public sources.",
+    step: "01",
+  },
+  {
+    name: "Qualify",
+    note: "Scores fit against the profile. Most are rejected here.",
+    step: "02",
+  },
+  {
+    name: "Outreach",
+    note: "Drafts and sends the first approach off the research.",
+    step: "03",
+  },
+  {
+    name: "Follow-up",
+    note: "Chases on schedule, so nothing goes cold in a busy week.",
+    step: "04",
+  },
+  {
+    human: true,
+    name: "The conversation",
+    note: "A person takes it from here. The agent never runs the call.",
+    step: "05",
+  },
+  {
+    name: "CRM update",
+    note: "Writes the outcome back, with the research attached.",
+    step: "06",
+  },
+] as const;
+
+/* Supplied by Raj: the team spent roughly 10 hours a week finding leads and
+   calling them; the agent now carries research, outreach, follow-ups and CRM
+   updates, and is estimated to give back 5 to 8 of those hours.
+
+   Flagged provisional on the page because it is an estimate rather than an
+   instrumented measurement — the same treatment Owairoa's figure gets.
+
+   The rejection count remains the better headline when the run over the
+   existing prospect list lands. Swap it in as the primary then and move this
+   to secondary; "screened 140, rejected 96" is what makes the rejected card
+   land. Do not publish per-criterion breakdowns with it. */
 const stat: AgentStat = {
-  claim: "It rejects more prospects than it qualifies. That's the point.",
-  kind: "fallback",
+  kind: "figures",
+  primary: {
+    caption:
+      "Given back to the team each week, across research, outreach, follow-ups and CRM admin.",
+    unit: "hours/week",
+    value: "5–8",
+  },
+  provisional: "Estimated — not yet instrumented",
+  secondary: {
+    caption:
+      "What finding leads and calling them used to take, every week, before the agent existed.",
+    value: "10 hours",
+  },
 };
 
 export default function SalesAgent() {
@@ -75,14 +127,27 @@ export default function SalesAgent() {
           Cold outreach that <em>knows who not to call.</em>
         </>
       }
-      lede="Growing Saha means finding the right businesses to talk to, not more of them. So we built the agent to disqualify. It researches a prospect, scores fit against a defined profile, and most of the time the answer is no."
+      lede="Growing Saha means finding the right businesses to talk to, not more of them. So we built the agent to disqualify first. It researches a prospect, scores fit against a defined profile, and most of the time the answer is no — then it runs outreach, follow-ups and the CRM admin on the few that survive."
       product="Saha Sales Research"
-      replaced="Twenty to thirty minutes of manual research per prospect, done differently by whoever happened to be doing it that week, and usually skipped when the week got busy."
+      replaced="Around ten hours a week spent finding leads, researching them by hand, making the calls and writing it all up afterwards — done differently by whoever happened to be doing it, and the follow-ups quietly dropped whenever the week got busy."
       stat={stat}
-      status="Two prospects shown from a single batch · research and scoring run before any human opens the record"
+      status="Two prospects shown from a single batch · research, scoring and outreach run before any human opens the record"
       syntheticNote="Companies, criteria and scores are invented for this page. Saha's actual qualification model is confidential and is not shown here."
       title="Batch review"
     >
+      <div className="as-pipeline">
+        {pipeline.map((stage) => (
+          <div
+            className={`as-stage${"human" in stage && stage.human ? " as-stage--human" : ""}`}
+            key={stage.step}
+          >
+            <span className="as-stage__step">{stage.step}</span>
+            <span className="as-stage__name">{stage.name}</span>
+            <p className="as-stage__note">{stage.note}</p>
+          </div>
+        ))}
+      </div>
+
       <div className="as-prospects">
         {prospects.map((prospect) => (
           <article

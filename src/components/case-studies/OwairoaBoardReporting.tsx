@@ -95,7 +95,7 @@ const stat: AgentStat = {
     unit: "hours",
     value: "3–4",
   },
-  provisional: true,
+  provisional: "Provisional — pending client confirmation",
   secondary: {
     caption: "Board meetings a year, each needing a full pack.",
     value: "9 meetings",

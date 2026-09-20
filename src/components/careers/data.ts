@@ -1,8 +1,7 @@
 export const careersLandingStats = [
   {
-    label:
-      "Internship streams open across AI, digital, personal consulting & more",
-    value: "3",
+    label: "Internship stream — AI consulting, full stop",
+    value: "1",
   },
   {
     label: "Real work from day one. No sideline watching, no coffee runs",
@@ -45,27 +44,61 @@ export const careersValueCards = [
   },
 ];
 
+/* One stream, matching the services collapse. Personal and Digital are cut,
+   so the internship follows. */
 export const careersInternshipStreams = [
   {
     description:
-      "Help clients adopt AI tools, build strategies, and automate intelligently",
+      "Help real clients adopt AI tools, build strategy and readiness plans, and automate the parts of their business that are actually worth automating. This is the one stream we run, and we run it properly.",
     href: "/services",
     icon: "🤖",
     title: "AI Consulting",
   },
+];
+
+/* How the internship actually runs, start to finish. */
+export const careersProcess = [
   {
-    description:
-      "Support individuals with career coaching, life goals, study, and social skills",
-    href: "/services",
-    icon: "🎯",
-    title: "Personal Consulting",
+    body: "Tell us where you're at and what you're curious about. No cover letter essay required.",
+    step: "1",
+    title: "Apply",
   },
   {
-    description:
-      "Build and sharpen web presence, social media, SEO, and digital tools",
-    href: "/services",
-    icon: "💻",
-    title: "Digital Consulting",
+    body: "A real conversation, not a grilling. We're checking for curiosity and drive, not a perfect CV.",
+    step: "2",
+    title: "Intro call",
+  },
+  {
+    body: "You're placed on actual client engagements from day one, not a training sandbox.",
+    step: "3",
+    title: "Matched to real client work",
+  },
+  {
+    body: "Regular check-ins with people who are actually invested in what you're learning, not just your output.",
+    step: "4",
+    title: "Ongoing mentorship",
+  },
+  {
+    body: "A real conversation about what you built and learned, plus a reference that reflects the actual work.",
+    step: "5",
+    title: "Wrap-up & reference",
+  },
+];
+
+/* Quotes confirmed accurate by Srikar and Robin. Do not edit the wording
+   without going back to them. */
+export const careersTestimonials = [
+  {
+    name: "Srikar",
+    quote:
+      "I came in expecting to shadow people and take notes. Instead I was building things that went live, tools our own team actually uses every day. Nobody handed me a sandbox project, they handed me the real problem.",
+    role: "Intern, AI Consulting",
+  },
+  {
+    name: "Robin",
+    quote:
+      "The best part wasn't the AI work itself, it was how much ownership I got. If I had an idea, I got to try it. If it didn't work, that was fine too, that's how you actually learn something.",
+    role: "Intern, AI Consulting",
   },
 ];
 
