@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, FormEvent, useState } from "react";
+import { FormEvent, useState } from "react";
 
 import { CONTACT_EMAIL } from "@/src/lib/site";
 
@@ -13,7 +13,6 @@ import {
 } from "./data";
 
 export default function CareersApplyForm() {
-  const [fileName, setFileName] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [failed, setFailed] = useState(false);
@@ -35,11 +34,6 @@ export default function CareersApplyForm() {
     } finally {
       setSending(false);
     }
-  };
-
-  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const nextFileName = event.target.files?.[0]?.name ?? "";
-    setFileName(nextFileName);
   };
 
   return (
@@ -201,30 +195,13 @@ export default function CareersApplyForm() {
               </div>
               <div className="af-divider" />
               <div className="af-field">
-                <label>
-                  CV / Resume <span className="req">*</span>
-                </label>
-                <div
-                  className={`file-upload-zone${fileName ? " has-file" : ""}`}
-                  id="cv-drop-zone"
-                >
-                  <input
-                    accept=".pdf,.doc,.docx"
-                    name="cv"
-                    onChange={handleFileChange}
-                    required
-                    type="file"
-                  />
-                  <div className="file-icon">📄</div>
-                  <h4>Upload your CV</h4>
-                  <p>PDF, Word (.doc / .docx) - Max 5MB</p>
-                  <p
-                    className={`file-name-display${fileName ? " visible" : ""}`}
-                    id="cv-name-display"
-                  >
-                    {fileName}
-                  </p>
-                </div>
+                <label>CV / Resume</label>
+                <p className="af-cv-note">
+                  No upload needed here. Send your CV to{" "}
+                  <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> — or
+                  wait for us to get in touch and reply to that email with it
+                  attached. Either works.
+                </p>
               </div>
               <div className="af-divider" />
               <div className="af-field">
@@ -254,7 +231,8 @@ export default function CareersApplyForm() {
                 </p>
                 {failed ? (
                   <p className="af-error" role="alert">
-                    Something went wrong sending your application. Email it to{" "}
+                    Something went wrong sending your application. Email your
+                    details to{" "}
                     <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> and
                     we&rsquo;ll pick it up from there.
                   </p>
@@ -276,6 +254,11 @@ export default function CareersApplyForm() {
             <p>
               Thank you for applying. We review every application personally and
               will be in touch within five business days.
+            </p>
+            <p>
+              You can send your CV to{" "}
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> now, or
+              just reply with it attached when we email you.
             </p>
           </div>
         )}

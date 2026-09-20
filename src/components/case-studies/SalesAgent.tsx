@@ -122,7 +122,6 @@ export default function SalesAgent() {
       ]}
       id="sales-agent"
       index="03"
-      address="saha.co.nz/agents/sales-research"
       eyebrow="Internal ops · Sales Agent"
       headline={
         <>

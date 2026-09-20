@@ -50,7 +50,6 @@ export type AgentShowcaseProps = {
   lede: string;
   /** Window chrome. */
   product: string;
-  address: string;
   title: string;
   actions?: AgentAction[];
   status: string;
@@ -117,7 +116,6 @@ export default function AgentShowcase({
   headline,
   lede,
   product,
-  address,
   title,
   actions = [],
   status,
@@ -128,6 +126,7 @@ export default function AgentShowcase({
 }: AgentShowcaseProps) {
   return (
     <section className="agent-showcase" id={id}>
+      <div className="as-inner">
       {/* Headline and the number sit together, above the screenshot. The
           figure used to live at the very bottom, after the frame, which put
           the payoff last and buried it. */}
@@ -146,15 +145,6 @@ export default function AgentShowcase({
       </header>
 
       <div className="as-frame">
-        <div className="as-frame__bar">
-          <span className="as-frame__dots" aria-hidden="true">
-            <span />
-            <span />
-            <span />
-          </span>
-          <span className="as-frame__addr">{address}</span>
-        </div>
-
         <div className="as-frame__head">
           <div>
             <p className="as-frame__product">{product}</p>
@@ -193,10 +183,11 @@ export default function AgentShowcase({
         ) : null}
       </div>
 
-      <footer className="as-replaced">
+      <div className="as-replaced">
         <p className="as-result__label">What it replaced</p>
         <p className="as-result__replaced">{replaced}</p>
-      </footer>
+      </div>
+      </div>
     </section>
   );
 }

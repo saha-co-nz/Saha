@@ -10,6 +10,18 @@
 */
 
 .agent-showcase {
+  display: block;
+  padding: 92px 28px;
+  background: var(--as-page, #0a1628);
+
+  --as-page: #0a1628;
+  --as-page-alt: #122040;
+  --as-on-dark: #ffffff;
+  --as-on-dark-soft: rgba(255, 255, 255, 0.72);
+  --as-on-dark-faint: rgba(255, 255, 255, 0.5);
+  --as-on-dark-line: rgba(255, 255, 255, 0.14);
+  --as-accent: #60a5fa;
+
   --as-bg: #ffffff;
   --as-cream: #faf8f4;
   --as-ink: #12192e;
@@ -37,8 +49,16 @@
     0 1px 2px rgba(18, 25, 46, 0.04), 0 8px 28px rgba(18, 25, 46, 0.07);
 
   font-family: var(--as-body);
-  color: var(--as-ink);
   line-height: 1.55;
+}
+
+.agent-showcase:nth-of-type(even) {
+  background: var(--as-page-alt);
+}
+
+.as-inner {
+  max-width: 1180px;
+  margin: 0 auto;
   container-type: inline-size;
 }
 
@@ -56,7 +76,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--as-blue);
+  color: var(--as-accent);
   margin: 0 0 14px;
 }
 
@@ -67,18 +87,19 @@
   line-height: 1.12;
   letter-spacing: -0.005em;
   margin: 0 0 18px;
-  color: var(--as-ink);
+  color: var(--as-on-dark);
 }
 
 .as-headline em {
   font-style: italic;
   font-weight: 500;
-  color: var(--as-ink-soft);
+  color: var(--as-on-dark-faint);
 }
 
 .as-lede {
-  font-size: 1.02rem;
-  color: var(--as-grey);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--as-on-dark-soft);
   max-width: 62ch;
   margin: 0 0 34px;
 }
@@ -86,43 +107,17 @@
 /* ── Window chrome ───────────────────────────────────────────────── */
 
 .as-frame {
-  border: 1px solid var(--as-line);
-  border-radius: var(--as-radius);
+  /* The page is dark and sets white text, so anything inside this light panel
+     that does not set its own colour would inherit white and vanish. This
+     resets the inherited colour at the panel boundary. */
+  color: var(--as-ink);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
   background: var(--as-bg);
-  box-shadow: var(--as-shadow);
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.28),
+    0 18px 50px rgba(0, 0, 0, 0.34);
   overflow: hidden;
-}
-
-.as-frame__bar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 14px;
-  background: var(--as-cream);
-  border-bottom: 1px solid var(--as-line);
-}
-
-.as-frame__dots {
-  display: flex;
-  gap: 6px;
-  flex-shrink: 0;
-}
-
-.as-frame__dots span {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #d8dbe2;
-}
-
-.as-frame__addr {
-  font-family: var(--as-body);
-  font-size: 0.72rem;
-  color: #8a8f9c;
-  letter-spacing: 0.01em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .as-frame__head {
@@ -241,9 +236,9 @@
   grid-template-columns: 1.5fr 1fr;
   gap: 48px;
   align-items: start;
-  margin-bottom: 34px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid var(--as-line);
+  margin-bottom: 38px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--as-on-dark-line);
 }
 
 .as-head__tag {
@@ -272,7 +267,7 @@
 
 .as-head__stat {
   padding-left: 32px;
-  border-left: 2px solid var(--as-blue);
+  border-left: 2px solid var(--as-accent);
 }
 
 .as-result__label {
@@ -281,22 +276,23 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--as-ink-soft);
+  color: var(--as-on-dark-faint);
   margin: 0 0 9px;
 }
 
 .as-result__replaced {
-  font-size: 0.97rem;
-  color: var(--as-grey);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--as-on-dark-soft);
   margin: 0;
   max-width: 68ch;
 }
 
 /* ── What it replaced: the closing note, under the evidence ── */
 .as-replaced {
-  margin-top: 26px;
-  padding-top: 22px;
-  border-top: 1px solid var(--as-line);
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid var(--as-on-dark-line);
 }
 
 /* Populated stat */
@@ -305,19 +301,20 @@
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
-  color: var(--as-ink);
+  color: var(--as-on-dark);
   display: block;
 }
 
 .as-stat__primary .as-stat__unit {
   font-size: 1.4rem;
-  color: var(--as-ink-soft);
+  color: var(--as-on-dark-faint);
   font-weight: 500;
 }
 
 .as-stat__caption {
-  font-size: 0.86rem;
-  color: var(--as-grey);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--as-on-dark-soft);
   margin: 9px 0 0;
   max-width: 34ch;
 }
@@ -326,23 +323,23 @@
   font-family: var(--as-display);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--as-ink-soft);
-  margin-top: 16px;
+  color: var(--as-on-dark);
+  margin-top: 18px;
   display: block;
   line-height: 1;
 }
 
 .as-stat__derived {
-  margin-top: 16px;
-  padding-top: 14px;
-  border-top: 1px solid var(--as-line-soft);
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--as-on-dark-line);
 }
 
 .as-stat__derived-value {
   font-family: var(--as-display);
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--as-ink);
+  color: var(--as-on-dark);
 }
 
 /* The assumption is never optional next to a derived figure — a number
@@ -351,6 +348,7 @@
   font-size: 0.76rem;
   color: var(--as-grey);
   font-style: italic;
+  color: var(--as-on-dark-faint);
   margin: 5px 0 0;
   max-width: 38ch;
 }
@@ -362,12 +360,12 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--as-hold);
-  background: var(--as-hold-wash);
-  border: 1px solid rgba(154, 107, 22, 0.24);
+  color: #e3b341;
+  background: rgba(227, 179, 65, 0.1);
+  border: 1px solid rgba(227, 179, 65, 0.32);
   border-radius: 2px;
-  padding: 3px 7px;
-  margin-top: 12px;
+  padding: 4px 8px;
+  margin-top: 14px;
 }
 
 /* Unpopulated stat — deliberately not a placeholder. A verifiable sentence
@@ -377,8 +375,8 @@
   font-size: 1.32rem;
   font-weight: 500;
   font-style: italic;
-  line-height: 1.4;
-  color: var(--as-ink-soft);
+  line-height: 1.45;
+  color: var(--as-on-dark-soft);
   margin: 0;
   max-width: 40ch;
 }
@@ -1110,74 +1108,6 @@
   }
 }
 
-/* ══ Case studies page shell ═══════════════════════════════════════
-   globals.css still sets body to navy, so this page establishes its own
-   light ground rather than waiting on the rebrand. Scoped to .cs-page so
-   it changes nothing else. */
-
-.cs-page {
-  background: var(--as-bg, #ffffff);
-  color: #12192e;
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
-  padding: 104px 28px 96px;
-  min-height: 100vh;
-}
-
-.cs-page__head {
-  max-width: 1120px;
-  margin: 0 auto 64px;
-}
-
-.cs-page__eyebrow {
-  font-family: "Syne", system-ui, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #2347d4;
-  margin: 0 0 18px;
-}
-
-.cs-page__title {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-weight: 700;
-  font-size: clamp(2.6rem, 6vw, 4.4rem);
-  line-height: 1.06;
-  margin: 0 0 22px;
-  color: #12192e;
-}
-
-.cs-page__title em {
-  font-style: italic;
-  font-weight: 500;
-  color: #4b5570;
-}
-
-.cs-page__lede {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #5b5f6b;
-  max-width: 60ch;
-  margin: 0;
-}
-
-.cs-page__stack {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 96px;
-}
-
-@media (max-width: 640px) {
-  .cs-page {
-    padding: 88px 18px 72px;
-  }
-
-  .cs-page__stack {
-    gap: 68px;
-  }
-}
 
 /* ── Sales agent pipeline ──
    The agent owns more than research and scoring — outreach, follow-ups and
@@ -1195,9 +1125,9 @@
 
 .as-stage {
   background: var(--as-bg);
-  padding: 11px 14px;
+  padding: 12px 15px;
   flex: 1 1 0;
-  min-width: 132px;
+  min-width: 140px;
 }
 
 .as-stage--human {
@@ -1206,22 +1136,22 @@
 
 .as-stage__step {
   font-family: var(--as-body);
-  font-size: 0.66rem;
+  font-size: 0.68rem;
   font-variant-numeric: tabular-nums;
   color: var(--as-grey);
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
 .as-stage__name {
   font-family: var(--as-label);
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--as-ink);
   display: block;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 
 .as-stage--human .as-stage__name {
@@ -1229,10 +1159,71 @@
 }
 
 .as-stage__note {
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   color: var(--as-grey);
-  line-height: 1.4;
+  line-height: 1.45;
   margin: 0;
+}
+
+/* ══ Case studies page shell ═══════════════════════════════════════
+   The page sits on the site's navy rather than being the one white page on
+   an otherwise dark site. The agent panels stay light, so they read as
+   screenshots of real software instead of page furniture. */
+
+.cs-page {
+  background: #0a1628;
+  color: #ffffff;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+.cs-page__head {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 104px 28px 88px;
+}
+
+.cs-page__eyebrow {
+  font-family: "Syne", system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #60a5fa;
+  margin: 0 0 18px;
+}
+
+.cs-page__title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  line-height: 1.06;
+  margin: 0 0 22px;
+  color: #ffffff;
+}
+
+.cs-page__title em {
+  font-style: italic;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.cs-page__lede {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 62ch;
+  margin: 0;
+}
+
+.cs-page__stack {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .cs-page__head {
+    padding: 88px 18px 60px;
+  }
 }
 
 /* ── Contents strip ──
@@ -1242,29 +1233,29 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
-  background: #e5e7ec;
-  border: 1px solid #e5e7ec;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   margin-top: 56px;
 }
 
 .cs-contents__item {
   display: flex;
   flex-direction: column;
-  background: #ffffff;
-  padding: 20px 22px 22px;
+  background: #0a1628;
+  padding: 22px 24px 24px;
   text-decoration: none;
   transition: background 0.15s;
 }
 
 a.cs-contents__item:hover {
-  background: #f4f6fe;
+  background: #122040;
 }
 
 .cs-contents__index {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 1.15rem;
   font-weight: 700;
-  color: #aeb3c0;
+  color: rgba(255, 255, 255, 0.45);
   line-height: 1;
   margin-bottom: 14px;
 }
@@ -1275,46 +1266,46 @@ a.cs-contents__item:hover {
   font-weight: 700;
   letter-spacing: 0.11em;
   text-transform: uppercase;
-  color: #2347d4;
+  color: #60a5fa;
   margin-bottom: 7px;
 }
 
 .cs-contents__name {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.3rem;
+  font-size: 1.32rem;
   font-weight: 700;
-  color: #12192e;
+  color: #ffffff;
   line-height: 1.2;
   margin-bottom: 12px;
 }
 
 .cs-contents__stat {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.45rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: #12192e;
+  color: #ffffff;
   line-height: 1.1;
   margin-bottom: 5px;
 }
 
 .cs-contents__note {
-  font-size: 0.78rem;
-  line-height: 1.5;
-  color: #5b5f6b;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.58);
   margin-top: auto;
 }
 
 /* The one that is not a link yet reads as pending rather than broken. */
 .cs-contents__item--soon {
-  background: #faf8f4;
+  background: rgba(255, 255, 255, 0.035);
 }
 
 .cs-contents__item--soon .cs-contents__tag {
-  color: #9a6b16;
+  color: #e3b341;
 }
 
 .cs-contents__item--soon .cs-contents__name {
-  color: #4b5570;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 @media (max-width: 1000px) {

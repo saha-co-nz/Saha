@@ -70,7 +70,6 @@ export interface Config {
     users: User;
     media: Media;
     applications: Application;
-    "application-files": ApplicationFile;
     "payload-kv": PayloadKv;
     "payload-locked-documents": PayloadLockedDocument;
     "payload-preferences": PayloadPreference;
@@ -81,9 +80,6 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     applications: ApplicationsSelect<false> | ApplicationsSelect<true>;
-    "application-files":
-      | ApplicationFilesSelect<false>
-      | ApplicationFilesSelect<true>;
     "payload-kv": PayloadKvSelect<false> | PayloadKvSelect<true>;
     "payload-locked-documents":
       | PayloadLockedDocumentsSelect<false>
@@ -184,27 +180,9 @@ export interface Application {
   stream?: string | null;
   linkedin?: string | null;
   whyHire?: string | null;
-  cv?: (string | null) | ApplicationFile;
   status?: ("new" | "reviewing" | "interviewing" | "offered" | "closed") | null;
   updatedAt: string;
   createdAt: string;
-}
-/**
- * CVs attached to applications. Not publicly readable.
- */
-export interface ApplicationFile {
-  id: string;
-  updatedAt: string;
-  createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
 }
 export interface ApplicationsSelect<T extends boolean = true> {
   fullName?: T;
@@ -216,23 +194,9 @@ export interface ApplicationsSelect<T extends boolean = true> {
   stream?: T;
   linkedin?: T;
   whyHire?: T;
-  cv?: T;
   status?: T;
   updatedAt?: T;
   createdAt?: T;
-}
-export interface ApplicationFilesSelect<T extends boolean = true> {
-  updatedAt?: T;
-  createdAt?: T;
-  url?: T;
-  thumbnailURL?: T;
-  filename?: T;
-  mimeType?: T;
-  filesize?: T;
-  width?: T;
-  height?: T;
-  focalX?: T;
-  focalY?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

@@ -112,7 +112,6 @@ export default function OwairoaBoardReporting() {
       ]}
       id="board-reporting"
       index="01"
-      address="saha.co.nz/agents/board-reporting"
       eyebrow="Client engagement · Board Reporting"
       headline={
         <>

@@ -471,7 +471,7 @@ nav {
 }
 .intro-service-arr {
   font-size: 1rem;
-  color: rgba(10, 22, 40, 0.2);
+  color: rgba(10, 22, 40, 0.55);
   transition:
     color 0.3s,
     transform 0.3s;
@@ -626,7 +626,7 @@ nav {
   max-width: 300px;
   font-size: 0.75rem;
   line-height: 1.9;
-  color: rgba(10, 22, 40, 0.45);
+  color: rgba(10, 22, 40, 0.68);
   text-align: right;
 }
 .values-row {
@@ -1318,7 +1318,7 @@ nav {
   font-size: 0.6rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.45);
   margin-bottom: 1.2rem;
 }
 .tile-name {
@@ -2115,7 +2115,7 @@ nav {
   font-size: 0.58rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.45);
   margin-bottom: 1rem;
 }
 .st-icon {
@@ -2804,7 +2804,7 @@ nav {
   font-size: 0.6rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(10, 22, 40, 0.2);
+  color: rgba(10, 22, 40, 0.5);
 }
 .value-maori {
   font-family: var(--font-display);
@@ -2823,7 +2823,7 @@ nav {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(10, 22, 40, 0.4);
+  color: rgba(10, 22, 40, 0.68);
 }
 .value-desc {
   font-size: 0.82rem;
@@ -2908,12 +2908,12 @@ nav {
 }
 .area-info p {
   font-size: 0.75rem;
-  color: rgba(10, 22, 40, 0.45);
+  color: rgba(10, 22, 40, 0.68);
   line-height: 1.4;
 }
 .area-arrow {
   font-size: 0.9rem;
-  color: rgba(10, 22, 40, 0.2);
+  color: rgba(10, 22, 40, 0.55);
 }
 .looking-section {
   padding: 6rem 6rem;
@@ -2960,7 +2960,7 @@ nav {
 }
 .badge-text p {
   font-size: 0.75rem;
-  color: rgba(10, 22, 40, 0.45);
+  color: rgba(10, 22, 40, 0.68);
   line-height: 1.4;
 }
 .cta-section {
@@ -3264,59 +3264,6 @@ nav {
   color: rgba(10, 22, 40, 0.4);
   pointer-events: none;
 }
-.file-upload-zone {
-  border: 2px dashed var(--light);
-  border-radius: 8px;
-  background: var(--white);
-  padding: 2rem;
-  text-align: center;
-  cursor: pointer;
-  transition:
-    border-color 0.3s,
-    background 0.3s;
-  position: relative;
-}
-.file-upload-zone:hover {
-  border-color: var(--accent);
-  background: rgba(37, 99, 235, 0.03);
-}
-.file-upload-zone.has-file {
-  border-color: var(--accent);
-  border-style: solid;
-  background: rgba(37, 99, 235, 0.04);
-}
-.file-upload-zone input[type="file"] {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-}
-.file-icon {
-  font-size: 1.8rem;
-  margin-bottom: 0.6rem;
-}
-.file-upload-zone h4 {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--navy);
-  margin-bottom: 0.3rem;
-}
-.file-upload-zone p {
-  font-size: 0.75rem;
-  color: rgba(10, 22, 40, 0.4);
-}
-.file-name-display {
-  margin-top: 0.6rem;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--accent);
-  display: none;
-}
-.file-name-display.visible {
-  display: block;
-}
 .af-divider {
   height: 1px;
   background: var(--light);
@@ -3331,7 +3278,7 @@ nav {
   font-size: 0.55rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(10, 22, 40, 0.4);
+  color: rgba(10, 22, 40, 0.68);
   margin-left: 0.5rem;
   vertical-align: middle;
 }
@@ -3345,7 +3292,7 @@ nav {
 }
 .af-footer-note {
   font-size: 0.73rem;
-  color: rgba(10, 22, 40, 0.38);
+  color: rgba(10, 22, 40, 0.68);
   line-height: 1.5;
   max-width: 240px;
 }
@@ -3915,7 +3862,7 @@ nav {
   margin-top: 0.5rem;
   font-family: var(--font-mono);
   font-size: 0.58rem;
-  color: rgba(10, 22, 40, 0.3);
+  color: rgba(10, 22, 40, 0.62);
   letter-spacing: 0.05em;
 }
 .form-footer {
@@ -4096,7 +4043,7 @@ nav {
 }
 .doc-footer-note {
   font-size: 0.78rem;
-  color: rgba(10, 22, 40, 0.4);
+  color: rgba(10, 22, 40, 0.68);
   font-family: var(--font-mono);
 }
 
@@ -4854,12 +4801,12 @@ nav {
   margin-top: 2rem;
   font-family: var(--font-mono);
   font-size: 0.82rem;
-  color: var(--accent-bright);
+  color: var(--accent);
   border-bottom: 1px solid rgba(96, 165, 250, 0.35);
   padding-bottom: 2px;
 }
 .intro-cta:hover {
-  border-bottom-color: var(--accent-bright);
+  border-bottom-color: var(--accent);
 }
 @media (max-width: 900px) {
   .credibility {
@@ -5209,4 +5156,33 @@ nav {
 }
 .footer-logo .logo-mark {
   height: 32px;
+}
+
+/* ── Careers: CV note ──
+   Replaces the upload zone. Applicants email their CV instead, so nothing
+   personal is stored until the team actually asks for it. */
+.af-cv-note {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  background: rgba(37, 99, 235, 0.06);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: 4px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(10, 22, 40, 0.72);
+}
+.af-cv-note a {
+  color: var(--accent);
+  font-weight: 500;
+  border-bottom: 1px solid rgba(37, 99, 235, 0.4);
+}
+.af-cv-note a:hover {
+  border-bottom-color: var(--accent);
+}
+.apply-success p + p {
+  margin-top: 0.9rem;
+}
+.apply-success a {
+  color: var(--accent);
+  border-bottom: 1px solid rgba(37, 99, 235, 0.4);
 }

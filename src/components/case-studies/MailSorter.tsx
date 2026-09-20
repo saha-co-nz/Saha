@@ -34,7 +34,6 @@ export default function MailSorter() {
       ]}
       id="mail-sorter"
       index="02"
-      address="saha.co.nz/agents/mail-sorter"
       eyebrow="Internal ops · Mail Sorter"
       headline={
         <>

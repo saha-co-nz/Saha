@@ -12,18 +12,21 @@ import { CONTACT_EMAIL } from "@/src/lib/site";
 
    They now do two things, in this order of importance:
 
-     1. A durable record in Payload, with the CV stored in S3 and readable
-        only by a signed-in admin. This is the system of record: the team
+     1. A durable record in Payload. This is the system of record: the team
         sees every application at /admin under "Applications", with a status
         field to work through them. An inbox is not a pipeline — mail gets
         deleted, missed, or buried, and nothing else can be searched or
         filtered.
-     2. A notification email to business@saha.co.nz so nobody has to poll the
-        admin. The CV rides along as an attachment for convenience.
+     2. A notification email to business@saha.co.nz so nobody has to poll
+        the admin.
 
-   If the database write fails the email still goes, attachment included, so
-   an application is never silently lost. The reverse also holds. Only a
-   failure of both surfaces an error to the applicant. */
+   No CV is collected here. Applicants send it to business@saha.co.nz, or
+   reply with it attached once the team reaches out — which also means no
+   personal documents are stored on our side until someone actually wants
+   them.
+
+   If the database write fails the email still goes, and the reverse also
+   holds. Only a failure of both surfaces an error to the applicant. */
 
 const oAuth2Client = new google.auth.OAuth2(
   process.env.GMAIL_CLIENT_ID,
@@ -58,8 +61,6 @@ const FIELDS: [string, string][] = [
   ["linkedin", "LinkedIn"],
 ];
 
-/* 5MB, matching the limit the upload zone states to applicants. */
-const MAX_CV_BYTES = 5 * 1024 * 1024;
 
 export async function sendApplicationEmail(formData: FormData) {
   const applicant =
@@ -69,51 +70,15 @@ export async function sendApplicationEmail(formData: FormData) {
   const email = field(formData, "email");
   const why = field(formData, "why_hire");
 
-  const cv = formData.get("cv");
-  let cvBuffer: Buffer | null = null;
-  let cvName = "";
-
-  if (cv instanceof File && cv.size > 0) {
-    if (cv.size > MAX_CV_BYTES) {
-      throw new Error(
-        "That CV is over 5MB. Please upload a smaller file, or email it to us directly.",
-      );
-    }
-
-    cvBuffer = Buffer.from(await cv.arrayBuffer());
-    cvName = cv.name || "cv";
-  }
-
   let stored = false;
 
   try {
     const payload = await getPayload({ config: configPromise });
 
-    /* Payload is configured with string IDs (db.defaultIDType). */
-    let cvId: string | undefined;
-
-    if (cvBuffer) {
-      const file = await payload.create({
-        collection: "application-files",
-        data: {},
-        file: {
-          data: cvBuffer,
-          mimetype:
-            cv instanceof File && cv.type
-              ? cv.type
-              : "application/octet-stream",
-          name: cvName,
-          size: cvBuffer.length,
-        },
-      });
-      cvId = String(file.id);
-    }
-
     await payload.create({
       collection: "applications",
       data: {
         areaOfStudy: field(formData, "area_of_study"),
-        cv: cvId,
         email,
         fullName: applicant,
         linkedin: field(formData, "linkedin"),
@@ -158,10 +123,6 @@ export async function sendApplicationEmail(formData: FormData) {
     });
 
     await transporter.sendMail({
-      attachments:
-        cvBuffer && cvName
-          ? [{ content: cvBuffer, filename: cvName }]
-          : [],
       from: `"Saha Careers" <${process.env.GMAIL_USER ?? CONTACT_EMAIL}>`,
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px;">
@@ -176,7 +137,7 @@ export async function sendApplicationEmail(formData: FormData) {
                 ? "Saved to the Applications collection — open /admin to review and set a status."
                 : "<strong>Not saved to the database.</strong> This email is the only copy, so keep it."
             }
-            ${cvName ? "CV attached." : "No CV was attached."}
+            No CV is collected on the form — ask for it when you reply.
           </p>
         </div>
       `,

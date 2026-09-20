@@ -1,9 +1,13 @@
 import type { CollectionConfig } from "payload";
 
 /* Internship applications. Previously these went nowhere — the form showed a
-   success message and discarded everything. Now each one is a durable record
-   with the CV attached, listable and searchable in the admin, so an
-   application cannot be lost to a deleted or missed email. */
+   success message and discarded everything. Each one is now a durable record,
+   listable and searchable in the admin, so an application cannot be lost to a
+   deleted or missed email.
+
+   No CV is collected. Applicants email it to business@saha.co.nz or reply
+   with it attached when the team reaches out, which keeps personal documents
+   off our storage until someone actually wants them. */
 const Applications: CollectionConfig = {
   access: {
     create: () => true,
@@ -26,12 +30,6 @@ const Applications: CollectionConfig = {
     { name: "stream", type: "text" },
     { name: "linkedin", type: "text" },
     { name: "whyHire", type: "textarea" },
-    {
-      name: "cv",
-      admin: { description: "Downloadable from here. Not publicly readable." },
-      relationTo: "application-files",
-      type: "upload",
-    },
     {
       name: "status",
       admin: { position: "sidebar" },
