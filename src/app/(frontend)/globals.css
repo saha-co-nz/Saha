@@ -1085,6 +1085,8 @@ nav {
   cursor: pointer;
 }
 .footer-note {
+  /* Was 1.86:1 across every page. */
+  color: rgba(255, 255, 255, 0.6);
   font-family: var(--font-mono);
   font-size: 0.58rem;
   letter-spacing: 0.1em;
@@ -2062,9 +2064,11 @@ nav {
   pointer-events: none;
 }
 .lh-disclaimer {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.22);
+  /* Was rgba(...,0.22) — 2.0:1. This is the FMC Act notice; it has to be
+     legible, not decorative. */
+  color: rgba(255, 255, 255, 0.66);
   max-width: 560px;
   position: relative;
   z-index: 1;
@@ -4598,7 +4602,8 @@ nav {
   font-size: 0.55rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.2);
+  /* Was 1.86:1 on every page. */
+  color: rgba(255, 255, 255, 0.6);
 }
 #main-footer .footer-disclaimer-bar {
   padding: 1.5rem 4rem;
@@ -5130,7 +5135,10 @@ nav {
   }
 }
 
-/* ── Work With Us: the three ways in ── */
+/* ── Work With Us: the three ways in ──
+   These sit in .wuw-right-panel, which is --off-white. They were first
+   written for a dark panel, which made the titles white on near-white and
+   effectively invisible. Light-panel styling throughout. */
 .path-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -5139,9 +5147,9 @@ nav {
 }
 .path-card {
   padding: 1.4rem 1.3rem;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 2px solid var(--accent-bright);
+  background: var(--white);
+  border: 1px solid rgba(10, 22, 40, 0.1);
+  border-left: 2px solid var(--accent);
 }
 .path-price {
   display: block;
@@ -5149,33 +5157,33 @@ nav {
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent-bright);
+  color: var(--accent);
   margin-bottom: 0.6rem;
 }
 .path-title {
   font-family: var(--font-display);
   font-size: 1.08rem;
   font-weight: 700;
-  color: var(--white);
+  color: var(--navy);
   margin: 0 0 0.5rem;
   line-height: 1.25;
 }
 .path-body {
   font-size: 0.83rem;
   line-height: 1.55;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(10, 22, 40, 0.62);
   margin: 0;
 }
 .charity-note {
   margin: 1.6rem 0 0;
   font-size: 0.85rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(10, 22, 40, 0.62);
   max-width: 52ch;
 }
 .charity-note a {
-  color: var(--accent-bright);
-  border-bottom: 1px solid rgba(96, 165, 250, 0.35);
+  color: var(--accent);
+  border-bottom: 1px solid rgba(37, 99, 235, 0.35);
 }
 @media (max-width: 900px) {
   .path-grid {

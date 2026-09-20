@@ -257,7 +257,8 @@
   font-family: var(--as-display);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--as-line);
+  /* Was --as-line at 1.24:1 — decorative, but not to the point of invisible. */
+  color: #aeb3c0;
   line-height: 1;
 }
 
@@ -1263,7 +1264,7 @@ a.cs-contents__item:hover {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 1.15rem;
   font-weight: 700;
-  color: #c9ccd6;
+  color: #aeb3c0;
   line-height: 1;
   margin-bottom: 14px;
 }
