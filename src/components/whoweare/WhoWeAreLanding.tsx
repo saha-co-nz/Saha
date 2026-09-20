@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-import { wwaPeople, wwaValueCards } from "./data";
-
 const navTiles = [
   {
     description:
@@ -61,55 +59,6 @@ export default function WhoWeAreLanding() {
         ))}
       </div>
 
-      <section className="wwa-landing-section cream">
-        <div className="ls-header">
-          <div>
-            <p className="ls-eyebrow">Our Values</p>
-            <h2 className="ls-title">
-              What we stand for, <em>every day.</em>
-            </h2>
-          </div>
-          <Link className="ls-cta" href="/whoweare#values">
-            View all values →
-          </Link>
-        </div>
-        <div className="preview-grid-4">
-          {wwaValueCards.map((value) => (
-            <div className="value-card-wwa" key={value.maori}>
-              <div className="vc-icon">{value.icon}</div>
-              <div className="vc-maori">{value.maori}</div>
-              <div className="vc-divider" />
-              <div className="vc-english">{value.english}</div>
-              <p className="vc-desc">{value.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="wwa-landing-section">
-        <div className="ls-header">
-          <div>
-            <p className="ls-eyebrow">Our People</p>
-            <h2 className="ls-title">
-              Leadership that <em>shows up.</em>
-            </h2>
-          </div>
-          <Link className="ls-cta" href="/whoweare#people">
-            Meet the team →
-          </Link>
-        </div>
-        <div className="preview-grid-2">
-          {wwaPeople.map((person) => (
-            <div className="person-mini" key={person.name}>
-              <div>
-                <h3>{person.name}</h3>
-                <p className="role">{person.role}</p>
-                <p>{person.bio}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
     </div>
   );
 }
