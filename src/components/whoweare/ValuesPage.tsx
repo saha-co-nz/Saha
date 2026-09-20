@@ -51,15 +51,22 @@ const principles = [
   },
 ];
 
-export default function ValuesPage() {
+type ValuesPageProps = {
+  /** Folded into /whoweare as a section — demotes the heading from h1. */
+  asSection?: boolean;
+};
+
+export default function ValuesPage({ asSection = false }: ValuesPageProps) {
+  const Heading = asSection ? "h2" : "h1";
+
   return (
-    <div id="section-wwa">
+    <div id="values">
       <div className="values-hero">
         <div className="values-hero-left">
           <p className="v-eyebrow">Our Values</p>
-          <h1>
+          <Heading>
             The principles <em>we live by.</em>
-          </h1>
+          </Heading>
           <p>
             At Saha, our values aren&apos;t aspirational posters on a wall.
             They&apos;re the standards we hold ourselves to every single day —

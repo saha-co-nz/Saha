@@ -2,12 +2,13 @@
    Everything is scoped to .kali-page so nothing leaks into the rest of the site. */
 
 .kali-page {
-  --k-cream: #f8f4ea;
-  --k-cream-deep: #f1e8d6;
+  --k-cream: #f6eede;
+  --k-cream-deep: #eee1c6;
   --k-white: #ffffff;
   --k-ink: #212e32;
   --k-ink-soft: #52616b;
-  --k-border: rgba(33, 46, 50, 0.12);
+  --k-border: rgba(62, 88, 54, 0.18);
+  --k-border-strong: rgba(62, 88, 54, 0.32);
   --k-sage-700: #3e5836;
   --k-sage-600: #4c6b41;
   --k-sage-500: #5c7a4e;
@@ -23,7 +24,7 @@
 
   background: var(--k-cream);
   color: var(--k-ink);
-  font-family: var(--kali-body), system-ui, sans-serif;
+  font-family: var(--s-body);
   font-size: 17px;
   line-height: 1.68;
   width: 100%;
@@ -48,9 +49,10 @@
   background: linear-gradient(
     168deg,
     var(--k-cream) 0%,
-    var(--k-cream-deep) 100%
+    var(--k-cream-deep) 58%,
+    var(--k-sage-50) 100%
   );
-  border-bottom: 1px solid var(--k-border);
+  border-bottom: 2px solid var(--k-sage-400);
 }
 .kali-hero__grid {
   display: grid;
@@ -62,7 +64,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-weight: 650;
+  font-weight: 700;
   font-size: 0.78rem;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -94,23 +96,23 @@
   line-height: 1;
 }
 .kali-lockup__name {
-  font-family: var(--kali-display), Georgia, serif;
+  font-family: var(--s-display);
   font-size: 1.45rem;
-  font-weight: 560;
+  font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--k-ink);
 }
 .kali-lockup__sub {
   font-size: 0.62rem;
-  font-weight: 650;
+  font-weight: 700;
   letter-spacing: 0.19em;
   text-transform: uppercase;
   color: var(--k-sage-600);
   margin-top: 0.36em;
 }
 .kali-page h1 {
-  font-family: var(--kali-display), Georgia, serif;
-  font-weight: 440;
+  font-family: var(--s-display);
+  font-weight: 500;
   line-height: 1.12;
   letter-spacing: -0.015em;
   font-size: clamp(2.1rem, 1.4rem + 2.9vw, 3.3rem);
@@ -142,6 +144,7 @@
   align-items: start;
   background: var(--k-white);
   border: 1px solid var(--k-border);
+  border-left: 3px solid var(--k-sage-400);
   border-radius: 12px;
   padding: 1.1rem 1.25rem;
   box-shadow: var(--k-shadow-sm);
@@ -159,7 +162,7 @@
 .kali-highlight strong {
   display: block;
   color: var(--k-ink);
-  font-weight: 650;
+  font-weight: 700;
   margin-bottom: 0.15em;
 }
 .kali-highlight__body span {
@@ -174,11 +177,11 @@
 }
 .kali-section--sage {
   background: var(--k-sage-50);
-  border-block: 1px solid var(--k-border);
+  border-block: 1px solid var(--k-border-strong);
 }
 .kali-page h2 {
-  font-family: var(--kali-display), Georgia, serif;
-  font-weight: 460;
+  font-family: var(--s-display);
+  font-weight: 500;
   line-height: 1.15;
   letter-spacing: -0.015em;
   font-size: clamp(1.65rem, 1.3rem + 1.5vw, 2.3rem);
@@ -243,7 +246,7 @@
 }
 .kali-card h3 {
   font-size: 1.12rem;
-  font-weight: 650;
+  font-weight: 700;
   color: var(--k-ink);
   margin: 0 0 0.5em;
   letter-spacing: -0.01em;
@@ -286,7 +289,7 @@
   color: var(--k-white);
   border-radius: 999px;
   padding: 0.95rem 1.8rem;
-  font-weight: 650;
+  font-weight: 700;
   font-size: 1rem;
   text-decoration: none;
   box-shadow: var(--k-shadow-sm);

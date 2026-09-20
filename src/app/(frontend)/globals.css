@@ -29,7 +29,6 @@ body {
   color: var(--white);
   font-family: var(--font-mono);
   overflow-x: hidden;
-  cursor: none;
 }
 
 /* ── CUSTOM CURSOR ── */
@@ -87,7 +86,6 @@ nav {
   font-size: 1.4rem;
   color: var(--white);
   letter-spacing: -0.02em;
-  cursor: none;
   position: relative;
   z-index: 1;
 }
@@ -104,7 +102,6 @@ nav {
   color: rgba(255, 255, 255, 0.5);
   background: none;
   border: none;
-  cursor: none;
   transition: color 0.3s;
   text-decoration: none;
 }
@@ -120,7 +117,6 @@ nav {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   border: none;
-  cursor: none;
   transition:
     background 0.3s,
     transform 0.2s;
@@ -256,7 +252,6 @@ nav {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   border-radius: 4px;
-  cursor: none;
   transition:
     background 0.3s,
     transform 0.2s;
@@ -276,7 +271,6 @@ nav {
   font-size: 0.72rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  cursor: none;
   transition: color 0.3s;
   display: flex;
   align-items: center;
@@ -453,7 +447,6 @@ nav {
     background 0.3s,
     padding-left 0.3s,
     transform 0.3s;
-  cursor: none;
   border-left: 3px solid transparent;
   border-radius: 10px;
 }
@@ -565,7 +558,6 @@ nav {
   color: var(--accent-bright);
   background: none;
   border: none;
-  cursor: none;
   transition: gap 0.3s;
 }
 .feature-btn:hover {
@@ -585,7 +577,6 @@ nav {
   background: rgba(10, 22, 40, 0.6);
   padding: 2.5rem 2rem;
   transition: background 0.3s;
-  cursor: none;
 }
 .feature-card:hover {
   background: rgba(37, 99, 235, 0.1);
@@ -652,7 +643,6 @@ nav {
   transition:
     background 0.35s,
     transform 0.35s;
-  cursor: none;
   position: relative;
   overflow: hidden;
 }
@@ -800,7 +790,6 @@ nav {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   border-radius: 4px;
-  cursor: none;
   transition:
     background 0.3s,
     transform 0.2s;
@@ -819,7 +808,6 @@ nav {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   border-radius: 4px;
-  cursor: none;
   transition: all 0.3s;
 }
 .btn-cta-outline:hover {
@@ -859,7 +847,6 @@ footer {
   color: rgba(255, 255, 255, 0.3);
   text-decoration: none;
   transition: color 0.3s;
-  cursor: none;
 }
 .footer-link:hover {
   color: rgba(255, 255, 255, 0.7);
@@ -4333,7 +4320,6 @@ nav {
   font-size: 1.5rem;
   color: #ffffff;
   letter-spacing: -0.02em;
-  cursor: none;
   flex-shrink: 0;
 }
 #main-nav .nav-center {
@@ -4347,7 +4333,6 @@ nav {
 #main-nav .nav-link {
   background: none;
   border: none;
-  cursor: none;
   font-family: "DM Mono", monospace;
   font-size: 0.72rem;
   font-weight: 500;
@@ -4378,7 +4363,6 @@ nav {
   background: #2563eb;
   color: #ffffff;
   border: none;
-  cursor: none;
   font-family: "DM Mono", monospace;
   font-size: 0.72rem;
   font-weight: 600;
@@ -4406,7 +4390,6 @@ nav {
   font-weight: 500;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  cursor: none;
   font-family: "DM Mono", monospace;
   transition: color 0.25s;
   padding: 0;
@@ -4431,7 +4414,6 @@ nav {
   background: none;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 6px;
-  cursor: none;
   flex-shrink: 0;
   transition: border-color 0.25s;
 }
@@ -4465,7 +4447,6 @@ nav {
   background: rgba(10, 22, 40, 0.55);
   border: none;
   padding: 0;
-  cursor: none;
 }
 .nav-mobile {
   display: none;
@@ -4493,7 +4474,6 @@ nav {
   color: rgba(255, 255, 255, 0.62);
   text-decoration: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  cursor: none;
   transition: color 0.25s;
 }
 .nav-mobile-link:hover {
@@ -4519,7 +4499,6 @@ nav {
   letter-spacing: 0.09em;
   text-transform: uppercase;
   text-decoration: none;
-  cursor: none;
   transition: background 0.25s;
 }
 .nav-mobile-cta:hover {
@@ -4594,7 +4573,6 @@ nav {
   font-weight: 900;
   font-size: 1.3rem;
   color: #ffffff;
-  cursor: none;
 }
 .footer-links-row {
   display: flex;
@@ -4605,7 +4583,6 @@ nav {
 .footer-nav-link {
   background: none;
   border: none;
-  cursor: none;
   font-family: "DM Mono", monospace;
   font-size: 0.58rem;
   letter-spacing: 0.1em;
@@ -4706,3 +4683,34 @@ nav {
 .payload-richtext {
   color: inherit;
 }
+
+/* ── Services capabilities ──
+   The three tiles are capabilities inside one discipline now, not links to
+   three separate services, so they are static rather than interactive. */
+.sector-tile--static {
+  cursor: default;
+}
+.st-items {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+.st-items li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+  opacity: 0.78;
+}
+.st-items li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+/* The stats row that lived here ("3 capabilities", "100% outcome-focused")
+   was filler rather than statistics, and has been removed. */

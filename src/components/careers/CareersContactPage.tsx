@@ -6,7 +6,7 @@ export default function CareersContactPage() {
     <div id="section-careers">
       <div id="careers-page-contact" className="page active">
         <CareersContactForm />
-        <CareersSimpleFooter note="© 2025 Saha NZ Limited" />
+        <CareersSimpleFooter note="© 2026 Saha NZ Limited" />
       </div>
     </div>
   );

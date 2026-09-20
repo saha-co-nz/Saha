@@ -6,7 +6,7 @@ const navTiles = [
   {
     description:
       "The principles that guide every decision, every client engagement, and every interaction — from Kia Pono to Kia Tūhono.",
-    href: "/whoweare/values",
+    href: "/whoweare#values",
     label: "Explore values",
     name: "Our Values",
     number: "01",
@@ -14,7 +14,7 @@ const navTiles = [
   {
     description:
       "The leaders and advisors who bring clarity, confidence, and deep expertise to every client relationship.",
-    href: "/whoweare/people",
+    href: "/whoweare#people",
     label: "Meet the team",
     name: "Our People",
     number: "02",
@@ -22,7 +22,7 @@ const navTiles = [
   {
     description:
       "How we hold ourselves accountable — the structures, standards, and commitments that keep us trustworthy.",
-    href: "/whoweare/governance",
+    href: "/whoweare#governance",
     label: "Read more",
     name: "Governance",
     number: "03",
@@ -69,7 +69,7 @@ export default function WhoWeAreLanding() {
               What we stand for, <em>every day.</em>
             </h2>
           </div>
-          <Link className="ls-cta" href="/whoweare/values">
+          <Link className="ls-cta" href="/whoweare#values">
             View all values →
           </Link>
         </div>
@@ -94,7 +94,7 @@ export default function WhoWeAreLanding() {
               Leadership that <em>shows up.</em>
             </h2>
           </div>
-          <Link className="ls-cta" href="/whoweare/people">
+          <Link className="ls-cta" href="/whoweare#people">
             Meet the team →
           </Link>
         </div>

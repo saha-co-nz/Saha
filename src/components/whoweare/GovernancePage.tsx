@@ -1,15 +1,22 @@
 import { wwaGovernanceCommitments, wwaGovernancePrinciples, wwaGovernanceStructures } from "./data";
 
-export default function GovernancePage() {
+type GovernancePageProps = {
+  /** Folded into /whoweare as a section — demotes the heading from h1. */
+  asSection?: boolean;
+};
+
+export default function GovernancePage({ asSection = false }: GovernancePageProps) {
+  const Heading = asSection ? "h2" : "h1";
+
   return (
-    <div id="section-wwa">
+    <div id="governance">
       <div className="gov-hero">
         <div className="gov-hero-grid" />
         <div className="gov-hero-left">
           <p className="gov-eyebrow">Governance</p>
-          <h1>
+          <Heading>
             Strong governance for <em>a bold future.</em>
-          </h1>
+          </Heading>
           <p>
             Good governance sits at the heart of Saha. Our work is built on
             trust — trust that comes from honesty, discipline, and doing the

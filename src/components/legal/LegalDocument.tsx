@@ -47,7 +47,7 @@ export default function LegalDocument({
         <Link className="doc-footer-logo" href="/">
           saha.
         </Link>
-        <span className="doc-footer-note">© 2025 Saha. All rights reserved.</span>
+        <span className="doc-footer-note">© 2026 Saha. All rights reserved.</span>
       </div>
     </div>
   );

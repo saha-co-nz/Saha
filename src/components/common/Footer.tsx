@@ -24,7 +24,7 @@ export default function Footer() {
           ))}
         </div>
         <span className="footer-note">
-          © 2025 Saha NZ Limited — Australasia
+          © 2026 Saha NZ Limited — Australasia
         </span>
       </div>
       <div className="footer-disclaimer-bar">

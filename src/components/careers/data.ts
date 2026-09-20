@@ -49,21 +49,21 @@ export const careersInternshipStreams = [
   {
     description:
       "Help clients adopt AI tools, build strategies, and automate intelligently",
-    href: "/services/ai",
+    href: "/services",
     icon: "🤖",
     title: "AI Consulting",
   },
   {
     description:
       "Support individuals with career coaching, life goals, study, and social skills",
-    href: "/services/personal",
+    href: "/services",
     icon: "🎯",
     title: "Personal Consulting",
   },
   {
     description:
       "Build and sharpen web presence, social media, SEO, and digital tools",
-    href: "/services/digital",
+    href: "/services",
     icon: "💻",
     title: "Digital Consulting",
   },

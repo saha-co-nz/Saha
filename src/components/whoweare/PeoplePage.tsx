@@ -2,17 +2,24 @@ import Link from "next/link";
 
 import { wwaPeople } from "./data";
 
-export default function PeoplePage() {
+type PeoplePageProps = {
+  /** Folded into /whoweare as a section — demotes the heading from h1. */
+  asSection?: boolean;
+};
+
+export default function PeoplePage({ asSection = false }: PeoplePageProps) {
+  const Heading = asSection ? "h2" : "h1";
+
   return (
-    <div id="section-wwa">
+    <div id="people">
       <div className="people-hero">
         <div className="people-hero-grid" />
         <div className="people-hero-glow" />
         <div className="ph-inner">
           <p className="ph-eyebrow">Our People</p>
-          <h1 className="ph-title">
+          <Heading className="ph-title">
             Leadership that <em>shows up.</em>
-          </h1>
+          </Heading>
           <p className="ph-body">
             Our team brings together expertise across AI, personal development,
             and digital consulting. What ties us together isn&apos;t just

@@ -1,6 +1,4 @@
-import Link from "next/link";
-
-import { servicesLandingStats, servicesLandingTiles } from "./data";
+import { servicesCapabilities } from "./data";
 
 export default function ServicesLanding() {
   return (
@@ -18,9 +16,8 @@ export default function ServicesLanding() {
           className="lh-body"
           style={{ position: "relative", zIndex: 1, marginBottom: "1.5rem" }}
         >
-          Saha provides focused consulting services across AI, personal
-          development, and digital — built for individuals and businesses ready
-          to move forward with clarity and confidence.
+          Saha provides focused AI consulting for businesses ready to move
+          forward with clarity and confidence. One discipline, done properly.
         </p>
         <p className="lh-disclaimer">
           Saha is not a licensed financial advice provider (FAP) under the
@@ -30,16 +27,17 @@ export default function ServicesLanding() {
       </div>
 
       <div className="sector-tiles">
-        {servicesLandingTiles.map((tile) => (
-          <Link className="sector-tile" href={tile.href} key={tile.href}>
-            <p className="st-num">{tile.number}</p>
-            <div className="st-icon">{tile.icon}</div>
-            <h2 className="st-name">{tile.name}</h2>
-            <p className="st-desc">{tile.description}</p>
-            <span className="st-link">
-              Explore <span className="st-arr">→</span>
-            </span>
-          </Link>
+        {servicesCapabilities.map((capability) => (
+          <div className="sector-tile sector-tile--static" key={capability.name}>
+            <p className="st-num">{capability.number}</p>
+            <h2 className="st-name">{capability.name}</h2>
+            <p className="st-desc">{capability.description}</p>
+            <ul className="st-items">
+              {capability.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
         ))}
       </div>
 
@@ -47,35 +45,19 @@ export default function ServicesLanding() {
         <div className="lo-left">
           <p className="section-eyebrow">Why Saha</p>
           <h2 className="section-title" style={{ marginBottom: "1.5rem" }}>
-            One firm. <em>Three disciplines.</em>
+            One firm. <em>One discipline.</em>
           </h2>
           <p>
-            Most people looking for consulting support find themselves juggling
-            multiple advisors who don&apos;t talk to each other. Saha brings AI,
-            personal, and digital consulting together so your advisor sees the
-            whole picture — and gives you advice that actually connects.
+            Most AI consultants sell strategy decks. We sell things that run.
+            Every project starts from the same question: does this actually save
+            time or make money, or is it just a slide?
           </p>
           <p>
             We don&apos;t hand you a template and wish you luck. We work
             alongside you — through the complexity, through the milestones, and
-            through whatever comes next.
+            through whatever comes next. Every engagement is tied to a real
+            outcome, not a deliverable count.
           </p>
-        </div>
-        <div className="lo-right">
-          {servicesLandingStats.map((stat) => (
-            <div className="lo-stat" key={stat.label}>
-              <span className="lo-stat-num">
-                {stat.value === "100%" ? (
-                  <>
-                    100<span>%</span>
-                  </>
-                ) : (
-                  stat.value
-                )}
-              </span>
-              <span className="lo-stat-label">{stat.label}</span>
-            </div>
-          ))}
         </div>
       </section>
     </div>

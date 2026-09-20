@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
 
 import Footer from "@/src/components/common/Footer";
 import Header from "@/src/components/common/Header";
@@ -8,15 +7,11 @@ import "./kali.css";
 
 const KALI_URL = "https://www.kali-foundation.com";
 
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--kali-display",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--kali-body",
-});
+/* Kali used to run Fraunces + Inter, a fourth and fifth family on top of the
+   site's own. It now shares the global display and body faces, and keeps its
+   separation through colour and type TREATMENT instead — see kali.css, where
+   the display face is set in italic at a lighter weight than Saha uses it.
+   Sage and the warmer paper do the rest of the work. */
 
 export const metadata: Metadata = {
   description:
@@ -76,7 +71,7 @@ export default function KaliPage() {
   return (
     <div>
       <Header />
-      <div className={`kali-page ${fraunces.variable} ${inter.variable}`}>
+      <div className="kali-page">
         <section className="kali-hero">
           <div className="kali-wrap kali-hero__grid">
             <div>
@@ -163,7 +158,7 @@ export default function KaliPage() {
           </div>
         </section>
 
-        <section className="kali-section">
+        <section className="kali-section kali-section--sage">
           <div className="kali-wrap">
             <div className="kali-intro">
               <p className="kali-eyebrow">What Kali Foundation does</p>

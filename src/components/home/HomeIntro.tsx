@@ -2,17 +2,17 @@ import Link from "next/link";
 
 const serviceRows = [
   {
-    href: "/services/ai",
+    href: "/services",
     name: "AI Consulting",
     tag: "Strategy · Automation · Training · Integration",
   },
   {
-    href: "/services/personal",
+    href: "/services",
     name: "Personal Consulting",
     tag: "Career · Life Coaching · Study · Social Skills",
   },
   {
-    href: "/services/digital",
+    href: "/services",
     name: "Digital Consulting",
     tag: "Web · Social Media · SEO · Automation",
   },

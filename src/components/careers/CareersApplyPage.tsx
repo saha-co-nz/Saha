@@ -1,12 +1,13 @@
 import CareersApplyForm from "./Form";
-import CareersSimpleFooter from "./CareersSimpleFooter";
 
+/* Folded into /careers. The standalone CareersSimpleFooter that used to close
+   this page has been dropped — the page-level Footer now does that job, and
+   globals.css only suppresses inner footers inside #section-careers. */
 export default function CareersApplyPage() {
   return (
-    <div id="section-careers">
-      <div id="careers-page-apply" className="page active">
+    <div id="apply">
+      <div className="page active" id="careers-page-apply">
         <CareersApplyForm />
-        <CareersSimpleFooter note="© 2025 Saha NZ Limited - Students first, always." />
       </div>
     </div>
   );

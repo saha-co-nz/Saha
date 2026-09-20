@@ -185,17 +185,17 @@ export default function CareersLanding() {
               people along the way.
             </p>
             <div className="cta-buttons">
-              <Link className="btn-primary-careers" href="/careers/apply">
+              <Link className="btn-primary-careers" href="/careers#apply">
                 Apply Now →
               </Link>
-              <Link className="btn-secondary-careers" href="/careers/contact">
+              <Link className="btn-secondary-careers" href="/contactus">
                 Contact Us
               </Link>
             </div>
           </div>
         </section>
 
-        <CareersSimpleFooter note="© 2025 Saha NZ Limited - Students first, always." />
+        <CareersSimpleFooter note="© 2026 Saha NZ Limited - Students first, always." />
       </div>
     </div>
   );

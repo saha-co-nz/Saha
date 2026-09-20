@@ -8,6 +8,7 @@ const navItems = [
   { href: "/", id: "nav-btn-home", label: "Home" },
   { href: "/whoweare", id: "nav-btn-wwa", label: "Who We Are" },
   { href: "/services", id: "nav-btn-svc", label: "Services" },
+  { href: "/case-studies", id: "nav-btn-cs", label: "Case Studies" },
   { href: "/kali", id: "nav-btn-kali", label: "Kali" },
   { href: "/careers", id: "nav-btn-careers", label: "Careers" },
 ];

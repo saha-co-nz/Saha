@@ -1082,3 +1082,72 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ══ Case studies page shell ═══════════════════════════════════════
+   globals.css still sets body to navy, so this page establishes its own
+   light ground rather than waiting on the rebrand. Scoped to .cs-page so
+   it changes nothing else. */
+
+.cs-page {
+  background: var(--as-bg, #ffffff);
+  color: #12192e;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  padding: 104px 28px 96px;
+  min-height: 100vh;
+}
+
+.cs-page__head {
+  max-width: 1120px;
+  margin: 0 auto 64px;
+}
+
+.cs-page__eyebrow {
+  font-family: "Syne", system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #2347d4;
+  margin: 0 0 18px;
+}
+
+.cs-page__title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  line-height: 1.06;
+  margin: 0 0 22px;
+  color: #12192e;
+}
+
+.cs-page__title em {
+  font-style: italic;
+  font-weight: 500;
+  color: #4b5570;
+}
+
+.cs-page__lede {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #5b5f6b;
+  max-width: 60ch;
+  margin: 0;
+}
+
+.cs-page__stack {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+}
+
+@media (max-width: 640px) {
+  .cs-page {
+    padding: 88px 18px 72px;
+  }
+
+  .cs-page__stack {
+    gap: 68px;
+  }
+}

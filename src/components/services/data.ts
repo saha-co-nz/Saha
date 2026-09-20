@@ -1,48 +1,51 @@
 import type { ServiceDetailPageProps } from "./ServiceDetailPage";
 
-export const servicesLandingTiles = [
+/* Saha is one discipline now, not three. Personal and Digital consulting are
+   cut for good rather than deferred, so their content does not migrate
+   anywhere — /services/personal and /services/digital 301 to /services.
+
+   What were three services are now three capabilities inside AI Consulting.
+   They are not separate routes: the page is the destination. */
+export const servicesCapabilities = [
   {
     description:
-      "Strategy, tools, and training to help you harness AI — practically and confidently.",
-    href: "/services/ai",
-    icon: "🤖",
-    name: "AI Consulting",
+      "Before anything gets built, we work out whether it should be. We assess where AI actually fits, then put together a roadmap specific enough to act on — not a deck that sits in a drive folder.",
+    items: [
+      "Readiness assessment",
+      "Opportunity mapping",
+      "Roadmapping",
+      "Decision advisory",
+    ],
+    name: "Strategy & Advisory",
     number: "01",
   },
   {
     description:
-      "Career, coaching, study, and social skills — helping you show up better in every area of life.",
-    href: "/services/personal",
-    icon: "🎯",
-    name: "Personal Consulting",
+      "This is where most AI projects die — between the strategy and the working system. We build the thing: automated workflows, integrations with what you already use, and tooling your team will actually open.",
+    items: [
+      "Workflow automation",
+      "System integration",
+      "Custom tooling",
+      "Testing & handover",
+    ],
+    name: "Implementation & Automation",
     number: "02",
   },
   {
     description:
-      "Web presence, social media, SEO, and automation — your digital world, sorted end to end.",
-    href: "/services/digital",
-    icon: "💻",
-    name: "Digital Consulting",
+      "A system nobody knows how to use is a system nobody uses. We make sure your team is confident and supported after handover, not just briefed and left to work it out.",
+    items: [
+      "Upskilling programmes",
+      "Adoption support",
+      "Change management",
+    ],
+    name: "Enablement & Upskilling",
     number: "03",
   },
 ];
 
-export const servicesLandingStats = [
-  {
-    label:
-      "Service disciplines under one roof — AI, personal & digital consulting",
-    value: "3",
-  },
-  {
-    label:
-      "Outcome-focused engagements — every scope is tied to real results",
-    value: "100%",
-  },
-  {
-    label: "Based in Auckland, serving clients across Australasia and beyond",
-    value: "NZ",
-  },
-];
+/* A fourth line, AI Governance, is scoped but deliberately not listed here.
+   It goes live once it is a staffed capability rather than a nice-to-have. */
 
 export const aiServicePage = {
   ctaBody:
@@ -127,151 +130,3 @@ export const aiServicePage = {
   ],
 } satisfies ServiceDetailPageProps;
 
-export const personalServicePage = {
-  ctaBody:
-    "Let's have a conversation — no obligation. We'll listen first and tell you honestly how we can help.",
-  ctaLabel: "Book a conversation →",
-  ctaTitle: "Ready to invest in yourself?",
-  eyebrow: "Personal Consulting",
-  gridCards: [
-    {
-      description:
-        "CV, cover letter, and LinkedIn overhauls. Job search strategy. Mock interviews. Career change roadmapping. Salary negotiation coaching. Personal branding and workplace navigation — we help you get to where you want to go, faster.",
-      icon: "💼",
-      title: "Career & Professional Development",
-    },
-    {
-      description:
-        "Clarity sessions to identify what you actually want. Short and long-term goal frameworks. Accountability check-ins. Habit building, productivity systems, and overcoming procrastination — real tools for real progress.",
-      icon: "🌟",
-      title: "Life Coaching & Goal Setting",
-    },
-    {
-      description:
-        "Study planning and scheduling. Exam strategy and revision techniques. University and course selection. Scholarship research. Assignment structuring and academic writing guidance. Motivation and burnout management.",
-      icon: "📚",
-      title: "Study & Academic Coaching",
-    },
-    {
-      description:
-        "Communication coaching — listening, expressing clearly, assertiveness. Confidence building in social and professional settings. Networking strategy, conflict resolution, and building relationships that last.",
-      icon: "🤝",
-      title: "Relationship & Social Skills",
-    },
-  ],
-  gridColumns: 2,
-  introBody:
-    "Four interconnected disciplines. One through-line — helping you show up better wherever it matters most.",
-  introTitleEmphasis: "built around you.",
-  introTitlePrefix: "Personal services",
-  summary:
-    "Career, goals, study, relationships — at their core, these are all about helping you perform at your best and connect more meaningfully. We offer a suite of personal consulting services built around what you actually need, not what a generic program delivers.",
-  titleEmphasis: "in every area of life.",
-  titlePrefix: "Show up better —",
-  highlights: [
-    {
-      description:
-        "CV, interviews, personal brand, and salary negotiation",
-      icon: "💼",
-      title: "Career & Professional Development",
-    },
-    {
-      description: "Clarity, accountability, and habits that actually stick",
-      icon: "🌟",
-      title: "Life Coaching & Goal Setting",
-    },
-    {
-      description:
-        "Exam strategy, motivation, and academic performance",
-      icon: "📚",
-      title: "Study & Academic Coaching",
-    },
-    {
-      description: "Communication, confidence, and networking",
-      icon: "🤝",
-      title: "Relationship & Social Skills",
-    },
-  ],
-} satisfies ServiceDetailPageProps;
-
-export const digitalServicePage = {
-  ctaBody:
-    "Tell us where you are and where you want to be — we'll map out what it takes to get there.",
-  ctaLabel: "Start the conversation →",
-  ctaTitle: "Ready to sharpen your digital presence?",
-  eyebrow: "Digital Consulting",
-  gridCards: [
-    {
-      description:
-        "Website audits, design and build (Squarespace, Wix, Webflow), brand identity, domain and hosting setup, and Google Business Profile optimisation. Your first impression — done right.",
-      icon: "🌐",
-      title: "Web Presence & Branding",
-    },
-    {
-      description:
-        "Strategy across the right platforms, profile setup and optimisation, content calendar planning, analytics review, and growth coaching. LinkedIn, Instagram, TikTok — wherever your audience is.",
-      icon: "📱",
-      title: "Social Media Consulting",
-    },
-    {
-      description:
-        "Website copy, blog and article writing, email newsletters, personal and business bios, and content repurposing — turning one strong piece into many. Words that work harder.",
-      icon: "✍️",
-      title: "Content & Copywriting",
-    },
-    {
-      description:
-        "Basic SEO audits, keyword research and strategy, local SEO for NZ businesses, and Google Analytics setup. Get found by the right people, at the right time, without paying for every click.",
-      icon: "🔍",
-      title: "SEO & Online Visibility",
-    },
-    {
-      description:
-        "Setting up Notion, Trello, Zapier, Monday, and CRM systems for small businesses. Email marketing setup. Workflow automation consulting. Making your digital tools actually talk to each other.",
-      icon: "⚡",
-      title: "Digital Tools & Automation",
-    },
-    {
-      description:
-        "Shopify and WooCommerce store setup, product listing optimisation, conversion rate advice, and payment and shipping configuration. Sell online — without the headaches.",
-      icon: "🛒",
-      title: "E-Commerce",
-    },
-  ],
-  gridColumns: 3,
-  introBody:
-    "From building your first website to automating your entire digital operation — we cover every layer of your online presence.",
-  introTitleEmphasis: "start to finish.",
-  introTitlePrefix: "Digital services",
-  summary:
-    "Web presence, social media, SEO, content, and automation — your digital footprint matters more than ever. We help individuals and businesses build an online presence that actually works, and put the tools in place to keep it growing.",
-  titleEmphasis: "sorted end to end.",
-  titlePrefix: "Your digital world —",
-  highlights: [
-    {
-      description: "Websites, Google profiles, and brand identity",
-      icon: "🌐",
-      title: "Web Presence & Branding",
-    },
-    {
-      description: "Strategy, content, and growth across the right platforms",
-      icon: "📱",
-      title: "Social Media Consulting",
-    },
-    {
-      description: "Web copy, blogs, newsletters, and personal bios",
-      icon: "✍️",
-      title: "Content & Copywriting",
-    },
-    {
-      description: "Get found — by the right people, at the right time",
-      icon: "🔍",
-      title: "SEO & Online Visibility",
-    },
-    {
-      description: "Workflows, CRMs, and smart systems for small business",
-      icon: "⚡",
-      title: "Digital Tools & Automation",
-    },
-  ],
-} satisfies ServiceDetailPageProps;

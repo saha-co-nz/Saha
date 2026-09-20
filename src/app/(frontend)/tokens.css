@@ -1,0 +1,92 @@
+/* Saha design tokens — the new visual direction.
+
+   This file layers OVER globals.css rather than replacing it. globals.css is
+   still the navy theme and still owns --font-display / --font-mono; its
+   refactor (4,708 lines, duplicate :root blocks) is deliberately deferred.
+   Nothing here overrides it, so the two can coexist while the rebrand is
+   confirmed.
+
+   TYPE ROLES — the split matters more than the faces:
+     --font-display  Cormorant Garamond. Display only, 32px and up. It goes
+                     thin and grey at body sizes, which is most of what made
+                     the mockup read as a mockup.
+     --font-label    Syne. Eyebrows, labels, nav, buttons. Never longer than
+                     a few words — it tires past two lines.
+     --font-body     Inter. All body copy, everywhere.
+
+   When globals.css is refactored, Playfair Display and DM Mono drop out and
+   the site lands on these three. Until then both sets are loaded. */
+
+:root {
+  /* ── Paper and ink ── */
+  --s-bg: #ffffff;
+  --s-cream: #faf8f4;
+  --s-ink: #12192e;
+  --s-ink-soft: #4b5570;
+  --s-grey: #5b5f6b;
+  --s-line: #e5e7ec;
+  --s-line-soft: #eef0f4;
+
+  /* ── Accent ── */
+  --s-blue: #2347d4;
+  --s-blue-wash: #f4f6fe;
+
+  /* ── Semantic ── */
+  --s-flag: #c4302b;
+  --s-pass: #2f6f4f;
+  --s-hold: #9a6b16;
+
+  /* ── Type roles ── */
+  --s-display: var(--font-cormorant), Georgia, serif;
+  --s-label: var(--font-syne), system-ui, sans-serif;
+  --s-body: var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  /* ── Type scale ──
+     Display starts at 2rem (32px), which is the floor for Cormorant. */
+  --s-display-lg: clamp(2.6rem, 6vw, 4.6rem);
+  --s-display-md: clamp(2rem, 4.2vw, 2.9rem);
+  --s-display-sm: 2rem;
+
+  --s-body-lg: 1.05rem;
+  --s-body-md: 0.95rem;
+  --s-body-sm: 0.85rem;
+
+  --s-label-md: 0.75rem;
+  --s-label-sm: 0.66rem;
+
+  --s-radius: 3px;
+  --s-max: 1120px;
+}
+
+/* ── Role utilities ──
+   Deliberately small. These exist so new work can adopt the direction
+   without waiting on the globals.css refactor. */
+
+.s-display {
+  font-family: var(--s-display);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.005em;
+  color: var(--s-ink);
+}
+
+.s-display em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--s-ink-soft);
+}
+
+.s-label {
+  font-family: var(--s-label);
+  font-size: var(--s-label-md);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.s-body {
+  font-family: var(--s-body);
+  font-size: var(--s-body-lg);
+  line-height: 1.6;
+  color: var(--s-grey);
+}

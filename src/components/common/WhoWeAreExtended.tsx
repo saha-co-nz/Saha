@@ -31,7 +31,7 @@ export default function WhoWeAreExtended({ onBack, onLinkClick }: Props) {
             <h2 className="text-xl">Overview</h2>
           </Link>
           <Link
-            href="/whoweare/governance"
+            href="/whoweare#governance"
             className="border-b p-4 hover:bg-white hover:text-black"
             onClick={onLinkClick}
           >
@@ -45,7 +45,7 @@ export default function WhoWeAreExtended({ onBack, onLinkClick }: Props) {
             <h2 className="text-xl">Our Values</h2>
           </Link>
           <Link
-            href="/whoweare/people"
+            href="/whoweare#people"
             className="border-b p-4 hover:bg-white hover:text-black"
             onClick={onLinkClick}
           >
@@ -76,7 +76,7 @@ export default function WhoWeAreExtended({ onBack, onLinkClick }: Props) {
             <h2 className="text-lg md:text-xl">Overview</h2>
           </Link>
           <Link
-            href="/whoweare/governance"
+            href="/whoweare#governance"
             className="border-b p-4 hover:bg-white hover:text-black"
             onClick={onLinkClick}
           >
@@ -90,7 +90,7 @@ export default function WhoWeAreExtended({ onBack, onLinkClick }: Props) {
             <h2 className="text-lg md:text-xl">Our Values</h2>
           </Link>
           <Link
-            href="/whoweare/people"
+            href="/whoweare#people"
             className="border-b p-4 hover:bg-white hover:text-black"
             onClick={onLinkClick}
           >
