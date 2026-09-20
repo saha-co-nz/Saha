@@ -1,14 +1,9 @@
-/* Three capabilities, matching the services collapse. This previously listed
-   career coaching, life coaching, study coaching, social skills, SEO,
-   e-commerce and social media — all part of the personal and digital
-   practices that have been cut. */
-const tickerItems = [
-  "AI Strategy & Advisory",
-  "Implementation & Automation",
-  "Enablement & Upskilling",
-];
+import { CAPABILITY_NAMES } from "@/src/lib/capabilities";
 
-const tickerContent = `${tickerItems.join(" — ")} — `;
+/* Names come from the shared source. This previously listed career coaching,
+   life coaching, study coaching, social skills, SEO, e-commerce and social
+   media — all cut services, still scrolling on the homepage. */
+const tickerContent = `${CAPABILITY_NAMES.join(" — ")} — `;
 
 export default function HomeTicker() {
   return (

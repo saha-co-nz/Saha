@@ -1,21 +1,6 @@
 import Link from "next/link";
 
-/* Three capabilities inside one discipline — not three services. All three
-   lead to /services, which is now the single destination. */
-const capabilityRows = [
-  {
-    name: "Strategy & Advisory",
-    tag: "Readiness · Opportunity mapping · Roadmapping",
-  },
-  {
-    name: "Implementation & Automation",
-    tag: "Workflows · Integration · Custom tooling",
-  },
-  {
-    name: "Enablement & Upskilling",
-    tag: "Upskilling · Adoption · Change management",
-  },
-];
+import { CAPABILITIES } from "@/src/lib/capabilities";
 
 export default function HomeIntro() {
   return (
@@ -39,7 +24,7 @@ export default function HomeIntro() {
       </div>
 
       <div className="intro-right">
-        {capabilityRows.map((capability) => (
+        {CAPABILITIES.map((capability) => (
           <Link
             className="intro-service-row"
             href="/services"

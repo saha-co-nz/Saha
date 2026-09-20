@@ -1,4 +1,4 @@
-import { servicesCapabilities } from "./data";
+import { CAPABILITIES } from "@/src/lib/capabilities";
 
 export default function ServicesLanding() {
   return (
@@ -27,7 +27,7 @@ export default function ServicesLanding() {
       </div>
 
       <div className="sector-tiles">
-        {servicesCapabilities.map((capability) => (
+        {CAPABILITIES.map((capability) => (
           <div className="sector-tile sector-tile--static" key={capability.name}>
             <p className="st-num">{capability.number}</p>
             <h2 className="st-name">{capability.name}</h2>

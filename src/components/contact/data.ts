@@ -1,3 +1,5 @@
+import { CAPABILITY_NAMES } from "@/src/lib/capabilities";
+
 /* "What happens next" from the design source. The previous four promises
    (fast response / confidential / no obligation / NZ-based team) were generic
    reassurance; these describe what actually happens after someone submits. */
@@ -50,14 +52,12 @@ export const workWithUsSourceOptions = [
   "Other",
 ];
 
-/* The three capabilities inside AI Consulting. This list previously offered
-   career coaching, life coaching, study coaching, social skills, web
-   presence, social media and SEO — every one of them a cut service that a
+/* Built from the shared capability list, plus an escape hatch. This picker
+   previously offered career coaching, life coaching, study coaching, social
+   skills, web presence, social media and SEO — every one a cut service that a
    business could still tick and submit an enquiry for. */
 export const workWithUsServiceOptions = [
-  "AI Strategy & Advisory",
-  "Implementation & Automation",
-  "Enablement & Upskilling",
+  ...CAPABILITY_NAMES,
   "Not sure / Other",
 ];
 

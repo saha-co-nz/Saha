@@ -1,3 +1,5 @@
+import { DISCIPLINE } from "@/src/lib/capabilities";
+
 export const careersLandingStats = [
   {
     label: "Internship stream — AI consulting, full stop",
@@ -52,7 +54,7 @@ export const careersInternshipStreams = [
       "Help real clients adopt AI tools, build strategy and readiness plans, and automate the parts of their business that are actually worth automating. This is the one stream we run, and we run it properly.",
     href: "/services",
     icon: "🤖",
-    title: "AI Consulting",
+    title: DISCIPLINE,
   },
 ];
 
@@ -148,6 +150,6 @@ export const careersApplyYearOptions = [
    offered Personal and Digital Consulting, so an applicant could apply to a
    stream that no longer exists. */
 export const careersApplyStreamOptions = [
-  "AI Consulting",
+  DISCIPLINE,
   "Not sure - open to discussion",
 ];
