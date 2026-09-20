@@ -144,9 +144,10 @@ export const careersApplyYearOptions = [
   "Other",
 ];
 
+/* One stream, matching the services collapse. The dropdown previously
+   offered Personal and Digital Consulting, so an applicant could apply to a
+   stream that no longer exists. */
 export const careersApplyStreamOptions = [
   "AI Consulting",
-  "Personal Consulting",
-  "Digital Consulting",
   "Not sure - open to discussion",
 ];

@@ -50,18 +50,14 @@ export const workWithUsSourceOptions = [
   "Other",
 ];
 
+/* The three capabilities inside AI Consulting. This list previously offered
+   career coaching, life coaching, study coaching, social skills, web
+   presence, social media and SEO — every one of them a cut service that a
+   business could still tick and submit an enquiry for. */
 export const workWithUsServiceOptions = [
   "AI Strategy & Advisory",
-  "AI Implementation",
-  "AI Training & Enablement",
-  "Career Coaching",
-  "Life Coaching & Goal Setting",
-  "Study & Academic Coaching",
-  "Relationship & Social Skills",
-  "Web Presence & Branding",
-  "Social Media Consulting",
-  "SEO & Online Visibility",
-  "Digital Tools & Automation",
+  "Implementation & Automation",
+  "Enablement & Upskilling",
   "Not sure / Other",
 ];
 

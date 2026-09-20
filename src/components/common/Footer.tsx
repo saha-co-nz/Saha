@@ -32,12 +32,11 @@ export default function Footer() {
       <div className="footer-disclaimer-bar">
         <span className="fdb-icon">⚖</span>
         <p className="fdb-text">
-          <strong>Legal disclaimer&nbsp;&nbsp;</strong>Saha provides AI,
-          personal, and digital consulting services. Nothing on this website
-          constitutes professional legal, financial, or regulated advice of any
-          kind. All information provided is general in nature and for
-          informational purposes only. Clients should seek independent, licensed
-          advice where required.
+          <strong>Legal disclaimer&nbsp;&nbsp;</strong>Saha provides AI
+          consulting services. Nothing on this website constitutes professional
+          legal, financial, or regulated advice of any kind. All information
+          provided is general in nature and for informational purposes only.
+          Clients should seek independent, licensed advice where required.
         </p>
       </div>
     </footer>

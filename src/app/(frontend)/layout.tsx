@@ -49,8 +49,9 @@ const inter = Inter({
 });
 
 export const metadata = {
-  description: "Saha. Australasia's Consulting Partner",
-  title: "saha.",
+  description:
+    "Saha is an AI consultancy in Auckland. We build the systems ourselves before we sell them — strategy, implementation and enablement, one discipline done properly.",
+  title: "saha. — AI consulting, Auckland",
 };
 
 type RootLayoutProps = {

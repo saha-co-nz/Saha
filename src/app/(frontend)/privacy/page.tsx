@@ -13,7 +13,7 @@ export default async function PrivacyPage() {
       <LegalDocument
         alternateHref="/termsofuse"
         alternateLabel="View the Terms of Use"
-        lastUpdated="17/11/25"
+        lastUpdated="20/09/2026"
         sections={sections}
         title="Privacy Policy"
       />
