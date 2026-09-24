@@ -19,4 +19,6 @@
 # Developers:
 1st Design: [Andrew Chen](https://github.com/axyc13)
 <br/>
-Current Design: [Kaiden Ziegler](https://github.com/dxv5648)
+2nd Design: [Kaiden Ziegler](https://github.com/dxv5648)
+<br/>
+Current Design: [Srikar]
