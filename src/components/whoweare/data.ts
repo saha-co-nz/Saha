@@ -1,3 +1,5 @@
+import { CONTACT_EMAIL } from "@/src/lib/site";
+
 export const wwaValueCards = [
   {
     description:
@@ -67,7 +69,7 @@ export const wwaPeople = [
     bio: "Satyam leads Saha's AI strategy and advisory work. His background is in accounting and audit — chartered accountant, audit and review at UHY Haines Norton in Auckland, specialising in New Zealand schools and charities. It means the AI recommendations he makes are held to the same standard as a financial audit: verifiable, defensible, and built to survive scrutiny rather than to win a pitch.",
     credential:
       "CA · Audit & review, UHY Haines Norton Auckland · NZ schools and charities",
-    email: "satyam@saha.co.nz",
+    email: CONTACT_EMAIL,
     image: "/satyam.jpg",
     name: "Satyam Saha",
     phone: "+64 22 315 5751",
