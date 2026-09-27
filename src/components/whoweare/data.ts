@@ -71,6 +71,9 @@ export const wwaPeople = [
       "CA · Audit & review · NZ schools and charities",
     email: CONTACT_EMAIL,
     image: "/satyam.jpg",
+    /* Portrait headshot on white — framed from just above the hair so the
+       full head and shoulders sit in the 4:3 card. */
+    imagePosition: "center 12%",
     name: "Satyam Saha",
     phone: "+64 22 315 5751",
     role: "Director",

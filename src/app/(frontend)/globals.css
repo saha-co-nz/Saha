@@ -1579,9 +1579,12 @@ body {
   transform: translateY(-6px);
   box-shadow: 0 24px 60px rgba(10, 22, 40, 0.1);
 }
+/* 4:3 rather than a fixed 260px strip, which cropped portrait headshots to
+   forehead-to-mouth on desktop. The min-height keeps phones from going flat. */
 .person-card-top {
   position: relative;
-  height: 260px;
+  aspect-ratio: 4 / 3;
+  min-height: 340px;
   background: var(--navy-mid);
 }
 .person-card-top-overlay {

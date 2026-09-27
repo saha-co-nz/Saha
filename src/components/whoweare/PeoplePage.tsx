@@ -38,6 +38,11 @@ export default function PeoplePage({ asSection = false }: PeoplePageProps) {
                   className="person-card-photo"
                   height={500}
                   src={person.image}
+                  style={
+                    person.imagePosition
+                      ? { objectPosition: person.imagePosition }
+                      : undefined
+                  }
                   width={500}
                 />
                 <div className="person-card-top-overlay" />
