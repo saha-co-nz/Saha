@@ -26,7 +26,7 @@ const contents = [
     href: "#board-reporting",
     index: "01",
     name: "Board reporting",
-    stat: "27–36 hours a year",
+    stat: "135–180 hours a year",
     statNote: "Preparation removed, across nine board meetings",
     tag: "Client engagement",
   },
@@ -54,7 +54,9 @@ export default function CaseStudiesPage() {
       <Header />
       <div className="cs-page">
         <header className="cs-page__head">
-          <p className="cs-page__eyebrow">What we&rsquo;ve built</p>
+          <p className="cs-page__eyebrow">
+            A glimpse of some of the things we&rsquo;ve built
+          </p>
           <h1 className="cs-page__title">
             Working software, <em>not slideware.</em>
           </h1>

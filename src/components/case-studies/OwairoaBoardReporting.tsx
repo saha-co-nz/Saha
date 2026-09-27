@@ -77,25 +77,26 @@ const auditorFlags = [
   },
 ] as const;
 
-/* Provisional: 3–4 hours of manual preparation per report across 9 board
-   meetings a year. Supplied by Raj, NOT yet client-confirmed — the badge
-   renders on the page for exactly that reason. Replace only once confirmed. */
+/* 15–20 hours of manual preparation per report across 9 board meetings a
+   year, and the $6,000–$8,000 saving — confirmed by Satyam and Raj,
+   27 September 2026. */
 const stat: AgentStat = {
   derived: {
     assumption:
-      "Derived: 3–4 hours × 9 meetings. Preparation only — excludes board review and distribution.",
+      "Derived: 15–20 hours × 9 meetings. Preparation only — excludes board review and distribution.",
     caption: "Preparation time removed across a full board year.",
     unit: "hours/year",
-    value: "27–36",
+    value: "135–180",
   },
   kind: "figures",
   primary: {
     caption:
       "Manual preparation per board report, before the agent was introduced.",
     unit: "hours",
-    value: "3–4",
+    value: "15–20",
   },
-  provisional: "Provisional — pending client confirmation",
+  outcome:
+    "$6,000 to $8,000 in cost savings, repurposed to student wellbeing.",
   secondary: {
     caption: "Board meetings a year, each needing a full pack.",
     value: "9 meetings",

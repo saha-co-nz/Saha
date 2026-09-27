@@ -6,22 +6,22 @@ import Link from "next/link";
    it is the positioning, not a footnote. */
 const chain = [
   {
-    body: "Satyam is a chartered accountant who audits New Zealand schools and charities at UHY Haines Norton in Auckland.",
+    body: "Satyam is a chartered accountant who has spent his career close to the numbers behind New Zealand's schools, charities, and community groups. He's seen how much good they do, and how stretched they are doing it.",
     label: "The background",
   },
   {
-    body: "Kali Foundation, our not-for-profit arm, works with exactly those organisations — schools, charities, community groups.",
-    label: "The same sector",
+    body: "That's why Kali Foundation exists. Our not-for-profit arm helps these organisations use AI to strengthen the work they already do. People and purpose come first. AI comes last.",
+    label: "The purpose",
     href: "/kali",
     linkText: "Kali Foundation →",
   },
   {
-    body: "Our AI readiness assessment was built and proven on Kali Foundation schools before it was ever offered to a business.",
-    label: "The same assessment",
+    body: "Everything we build is proven where the stakes are real. Our AI readiness assessment was developed and tested with Kali Foundation schools before it was ever offered to a business.",
+    label: "The proof",
   },
   {
-    body: "The board reporting agent we run for an Auckland primary school carries a review module built on five years of Auditor-General school audit findings.",
-    label: "The same standard",
+    body: "Trust isn't optional. The board reporting agent we run for an Auckland primary school carries a review module built on five years of Auditor-General school audit findings.",
+    label: "The standard",
     href: "/case-studies",
     linkText: "See it running →",
   },

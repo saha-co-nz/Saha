@@ -353,6 +353,16 @@
   max-width: 38ch;
 }
 
+.as-stat__outcome {
+  font-family: var(--as-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--as-on-dark);
+  margin: 16px 0 0;
+  max-width: 34ch;
+}
+
 .as-stat__provisional {
   display: inline-block;
   font-family: var(--as-label);

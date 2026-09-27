@@ -76,57 +76,7 @@ export default function KaliPage() {
           <div className="kali-wrap kali-hero__grid">
             <div>
               <div className="kali-lockup">
-                <svg viewBox="0 0 48 48" aria-hidden="true">
-                  <defs>
-                    <linearGradient id="kfMark" x1="0" y1="0" x2="0.85" y2="1">
-                      <stop offset="0%" stopColor="#7C9A6C" />
-                      <stop offset="55%" stopColor="#5C7A4E" />
-                      <stop offset="100%" stopColor="#3E5836" />
-                    </linearGradient>
-                  </defs>
-                  <rect width="48" height="48" rx="13" fill="url(#kfMark)" />
-                  <rect
-                    x="10.5"
-                    y="33"
-                    width="27"
-                    height="4.6"
-                    rx="2.3"
-                    fill="#FFFFFF"
-                    opacity="0.96"
-                  />
-                  <rect
-                    x="13.5"
-                    y="25.6"
-                    width="21"
-                    height="4.6"
-                    rx="2.3"
-                    fill="#FFFFFF"
-                    opacity="0.62"
-                  />
-                  <rect
-                    x="16.5"
-                    y="18.2"
-                    width="15"
-                    height="4.6"
-                    rx="2.3"
-                    fill="#FFFFFF"
-                    opacity="0.36"
-                  />
-                  <g transform="rotate(-14 24 13)">
-                    <path
-                      d="M24 6.6 C28.9 9.7 28.9 15.4 24 18.6 C19.1 15.4 19.1 9.7 24 6.6 Z"
-                      fill="#FFFFFF"
-                      opacity="0.97"
-                    />
-                    <path
-                      d="M24 9 V16.6"
-                      stroke="#5C7A4E"
-                      strokeWidth="1.1"
-                      strokeLinecap="round"
-                      opacity="0.55"
-                    />
-                  </g>
-                </svg>
+                <img alt="" height={512} src="/kali-logo.png" width={512} />
                 <span className="kali-lockup__text">
                   <span className="kali-lockup__name">Kali</span>
                   <span className="kali-lockup__sub">Foundation</span>

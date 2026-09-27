@@ -27,6 +27,9 @@ export type AgentStat =
           differs by case — a client engagement awaiting sign-off is not the
           same as an internal estimate that was never instrumented. */
       provisional?: string;
+      /** A confirmed result stated in plain words, shown where the
+          provisional badge would otherwise sit. */
+      outcome?: string;
     }
   | {
       /** Used when real numbers are not yet available. Carries a claim that is
@@ -100,6 +103,10 @@ function StatBlock({ stat }: { stat: AgentStat }) {
           <p className="as-stat__caption">{stat.derived.caption}</p>
           <p className="as-stat__assumption">{stat.derived.assumption}</p>
         </div>
+      ) : null}
+
+      {stat.outcome ? (
+        <p className="as-stat__outcome">{stat.outcome}</p>
       ) : null}
 
       {stat.provisional ? (
